@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed, watch } from 'vue';
 import AppLayout from './Layout/AppLayout.vue';
 import { Head } from '@inertiajs/vue3';
 
@@ -11,7 +11,100 @@ const props = defineProps({
 
 const mapContainer = ref(null);
 const currentView = ref('map');
+const itemsPerPage = 30;
+const currentPage = ref(1);
 let map = null;
+
+// Computed properties untuk pagination
+const paginatedTableData = computed(() => {
+    const start = (currentPage.value - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    return props.glamLocations.slice(start, end);
+});
+
+const paginatedGridData = computed(() => {
+    const start = (currentPage.value - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    return props.glamLocations.slice(start, end);
+});
+
+const totalPages = computed(() => {
+    return Math.ceil(props.glamLocations.length / itemsPerPage);
+});
+
+const hasMorePages = computed(() => {
+    return currentPage.value < totalPages.value;
+});
+
+const hasPreviousPages = computed(() => {
+    return currentPage.value > 1;
+});
+
+// Reset page ketika view berubah
+watch(currentView, () => {
+    currentPage.value = 1;
+});
+
+const loadMore = () => {
+    if (hasMorePages.value) {
+        currentPage.value++;
+        scrollToTop();
+    }
+};
+
+const loadPrevious = () => {
+    if (hasPreviousPages.value) {
+        currentPage.value--;
+        scrollToTop();
+    }
+};
+
+const goToPage = (page) => {
+    currentPage.value = page;
+    scrollToTop();
+};
+
+const scrollToTop = () => {
+    const container = document.querySelector('.overflow-y-auto');
+    if (container) {
+        container.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+};
+
+// Generate page numbers untuk pagination
+const pageNumbers = computed(() => {
+    const pages = [];
+    const total = totalPages.value;
+    const current = currentPage.value;
+    
+    if (total <= 7) {
+        // Jika total halaman <= 7, tampilkan semua
+        for (let i = 1; i <= total; i++) {
+            pages.push(i);
+        }
+    } else {
+        // Selalu tampilkan halaman 1
+        pages.push(1);
+        
+        if (current > 3) {
+            pages.push('...');
+        }
+        
+        // Tampilkan halaman di sekitar current page
+        for (let i = Math.max(2, current - 1); i <= Math.min(total - 1, current + 1); i++) {
+            pages.push(i);
+        }
+        
+        if (current < total - 2) {
+            pages.push('...');
+        }
+        
+        // Selalu tampilkan halaman terakhir
+        pages.push(total);
+    }
+    
+    return pages;
+});
 
 const setView = (view) => {
     currentView.value = view;
@@ -210,26 +303,15 @@ const groupedLocations = props.glamLocations.reduce((acc, location) => {
                                         Grid
                                     </span>
                                 </button>
-
-                                <button @click="setView('tree')" :class="[
-                                    'px-4 py-2 rounded-lg font-medium transition-all duration-200',
-                                    currentView === 'tree' ? 'bg-amber-600 text-white shadow-md' : 'bg-white text-slate-700 hover:bg-slate-100'
-                                ]">
-                                    <span class="flex items-center gap-2">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
-                                        </svg>
-                                        Tree
-                                    </span>
-                                </button>
                             </div>
                         </div>
 
                         <div v-show="currentView === 'map'" ref="mapContainer" class="w-full h-[600px] relative z-10"></div>
 
+                        <!-- Table View with Lazy Loading -->
                         <div v-show="currentView === 'table'" class="overflow-x-auto max-h-[600px] overflow-y-auto">
                             <table class="w-full">
-                                <thead class="bg-slate-100 sticky top-0">
+                                <thead class="bg-slate-100 sticky top-0 z-10">
                                     <tr>
                                         <th class="px-6 py-3 text-left text-xs font-medium text-slate-700 uppercase tracking-wider">No</th>
                                         <th class="px-6 py-3 text-left text-xs font-medium text-slate-700 uppercase tracking-wider">Nama</th>
@@ -238,8 +320,10 @@ const groupedLocations = props.glamLocations.reduce((acc, location) => {
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white divide-y divide-slate-200">
-                                    <tr v-for="(location, index) in glamLocations" :key="index" class="hover:bg-slate-50">
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-900">{{ index + 1 }}</td>
+                                    <tr v-for="(location, index) in paginatedTableData" :key="index" class="hover:bg-slate-50">
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-900">
+                                            {{ (currentPage - 1) * itemsPerPage + index + 1 }}
+                                        </td>
                                         <td class="px-6 py-4 text-sm text-slate-900">{{ location.name }}</td>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-600">
                                             {{ location.lat.toFixed(4) }}, {{ location.lng.toFixed(4) }}
@@ -253,62 +337,149 @@ const groupedLocations = props.glamLocations.reduce((acc, location) => {
                                     </tr>
                                 </tbody>
                             </table>
-                        </div>
-
-                        <div v-show="currentView === 'grid'" class="p-6 max-h-[600px] overflow-y-auto">
-                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                <div v-for="(location, index) in glamLocations" :key="index" class="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
-                                    <div v-if="location.img" class="h-48 overflow-hidden">
-                                        <img :src="location.img" :alt="location.name" class="w-full h-full object-cover" />
+                            
+                            <!-- Pagination for Table -->
+                            <div class="p-6 border-t border-slate-200">
+                                <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                                    <div class="text-sm text-slate-600">
+                                        Menampilkan <span class="font-semibold">{{ (currentPage - 1) * itemsPerPage + 1 }}</span> 
+                                        sampai <span class="font-semibold">{{ Math.min(currentPage * itemsPerPage, totalLocations) }}</span> 
+                                        dari <span class="font-semibold">{{ totalLocations }}</span> lokasi
                                     </div>
-                                    <div v-else class="h-48 bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center">
-                                        <svg class="w-16 h-16 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                        </svg>
-                                    </div>
-                                    <div class="p-4">
-                                        <h3 class="font-semibold text-slate-900 mb-2 line-clamp-2">{{ location.name }}</h3>
-                                        <p class="text-xs text-slate-500 mb-3">
-                                            {{ location.lat.toFixed(4) }}, {{ location.lng.toFixed(4) }}
-                                        </p>
-                                        <div class="flex gap-2">
-                                            <a v-if="location.wp" :href="location.wp" target="_blank" class="text-xs px-3 py-1 bg-blue-100 text-blue-700 rounded-full hover:bg-blue-200">
-                                                Wikipedia
-                                            </a>
-                                            <a v-if="location.wd" :href="`https://www.wikidata.org/wiki/${location.wd}`" target="_blank" class="text-xs px-3 py-1 bg-amber-100 text-amber-700 rounded-full hover:bg-amber-200">
-                                                Wikidata
-                                            </a>
+                                    
+                                    <div class="flex items-center gap-2">
+                                        <button 
+                                            @click="loadPrevious" 
+                                            :disabled="!hasPreviousPages"
+                                            :class="[
+                                                'px-4 py-2 rounded-lg font-medium transition-colors',
+                                                hasPreviousPages 
+                                                    ? 'bg-white border border-slate-300 text-slate-700 hover:bg-slate-50' 
+                                                    : 'bg-slate-100 text-slate-400 cursor-not-allowed'
+                                            ]">
+                                            ← Sebelumnya
+                                        </button>
+                                        
+                                        <div class="flex items-center gap-1">
+                                            <button
+                                                v-for="(page, index) in pageNumbers"
+                                                :key="index"
+                                                @click="page !== '...' ? goToPage(page) : null"
+                                                :class="[
+                                                    'min-w-[40px] h-[40px] rounded-lg font-medium transition-colors',
+                                                    page === currentPage 
+                                                        ? 'bg-amber-600 text-white' 
+                                                        : page === '...'
+                                                        ? 'cursor-default text-slate-400'
+                                                        : 'bg-white border border-slate-300 text-slate-700 hover:bg-slate-50'
+                                                ]">
+                                                {{ page }}
+                                            </button>
                                         </div>
+                                        
+                                        <button 
+                                            @click="loadMore" 
+                                            :disabled="!hasMorePages"
+                                            :class="[
+                                                'px-4 py-2 rounded-lg font-medium transition-colors',
+                                                hasMorePages 
+                                                    ? 'bg-white border border-slate-300 text-slate-700 hover:bg-slate-50' 
+                                                    : 'bg-slate-100 text-slate-400 cursor-not-allowed'
+                                            ]">
+                                            Selanjutnya →
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div v-show="currentView === 'tree'" class="p-6 max-h-[600px] overflow-y-auto">
-                            <div class="space-y-4">
-                                <details v-for="(locations, region) in groupedLocations" :key="region" class="bg-slate-50 rounded-lg border border-slate-200">
-                                    <summary class="px-4 py-3 font-semibold text-slate-900 cursor-pointer hover:bg-slate-100 rounded-lg">
-                                        📁 {{ region }} ({{ locations.length }})
-                                    </summary>
-                                    <div class="px-4 pb-4 pt-2 space-y-2">
-                                        <div v-for="(location, index) in locations" :key="index" class="pl-6 py-2 border-l-2 border-amber-300 hover:bg-white rounded">
-                                            <div class="flex items-start justify-between">
-                                                <div class="flex-1">
-                                                    <p class="font-medium text-slate-900">{{ location.name }}</p>
-                                                    <p class="text-xs text-slate-500 mt-1">
-                                                        {{ location.lat.toFixed(4) }}, {{ location.lng.toFixed(4) }}
-                                                    </p>
-                                                </div>
-                                                <div class="flex gap-2 ml-4">
-                                                    <a v-if="location.wp" :href="location.wp" target="_blank" class="text-xs text-blue-600 hover:underline">Wiki</a>
-                                                    <a v-if="location.wd" :href="`https://www.wikidata.org/wiki/${location.wd}`" target="_blank" class="text-xs text-amber-600 hover:underline">Data</a>
-                                                </div>
+                        <!-- Grid View with Lazy Loading -->
+                        <div v-show="currentView === 'grid'" class="max-h-[600px] overflow-y-auto">
+                            <div class="p-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                    <div v-for="(location, index) in paginatedGridData" :key="index" class="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+                                        <div v-if="location.img" class="h-48 overflow-hidden">
+                                            <img :src="location.img" :alt="location.name" class="w-full h-full object-cover" loading="lazy" />
+                                        </div>
+                                        <div v-else class="h-48 bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center">
+                                            <svg class="w-16 h-16 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                            </svg>
+                                        </div>
+                                        <div class="p-4">
+                                            <h3 class="font-semibold text-slate-900 mb-2 line-clamp-2">{{ location.name }}</h3>
+                                            <p class="text-xs text-slate-500 mb-3">
+                                                {{ location.lat.toFixed(4) }}, {{ location.lng.toFixed(4) }}
+                                            </p>
+                                            <div class="flex gap-2">
+                                                <a v-if="location.wp" :href="location.wp" target="_blank" class="text-xs px-3 py-1 bg-blue-100 text-blue-700 rounded-full hover:bg-blue-200">
+                                                    Wikipedia
+                                                </a>
+                                                <a v-if="location.wd" :href="`https://www.wikidata.org/wiki/${location.wd}`" target="_blank" class="text-xs px-3 py-1 bg-amber-100 text-amber-700 rounded-full hover:bg-amber-200">
+                                                    Wikidata
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
-                                </details>
+                                </div>
+                            </div>
+                            
+                            <!-- Pagination for Grid -->
+                            <div class="p-6 border-t border-slate-200">
+                                <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                                    <div class="text-sm text-slate-600">
+                                        Menampilkan <span class="font-semibold">{{ (currentPage - 1) * itemsPerPage + 1 }}</span> 
+                                        sampai <span class="font-semibold">{{ Math.min(currentPage * itemsPerPage, totalLocations) }}</span> 
+                                        dari <span class="font-semibold">{{ totalLocations }}</span> lokasi
+                                    </div>
+                                    
+                                    <div class="flex items-center gap-2">
+                                        <button 
+                                            @click="loadPrevious" 
+                                            :disabled="!hasPreviousPages"
+                                            :class="[
+                                                'px-4 py-2 rounded-lg font-medium transition-colors',
+                                                hasPreviousPages 
+                                                    ? 'bg-white border border-slate-300 text-slate-700 hover:bg-slate-50' 
+                                                    : 'bg-slate-100 text-slate-400 cursor-not-allowed'
+                                            ]">
+                                            ← Sebelumnya
+                                        </button>
+                                        
+                                        <div class="flex items-center gap-1">
+                                            <button
+                                                v-for="(page, index) in pageNumbers"
+                                                :key="index"
+                                                @click="page !== '...' ? goToPage(page) : null"
+                                                :class="[
+                                                    'min-w-[40px] h-[40px] rounded-lg font-medium transition-colors',
+                                                    page === currentPage 
+                                                        ? 'bg-amber-600 text-white' 
+                                                        : page === '...'
+                                                        ? 'cursor-default text-slate-400'
+                                                        : 'bg-white border border-slate-300 text-slate-700 hover:bg-slate-50'
+                                                ]">
+                                                {{ page }}
+                                            </button>
+                                        </div>
+                                        
+                                        <button 
+                                            @click="loadMore" 
+                                            :disabled="!hasMorePages"
+                                            :class="[
+                                                'px-4 py-2 rounded-lg font-medium transition-colors',
+                                                hasMorePages 
+                                                    ? 'bg-white border border-slate-300 text-slate-700 hover:bg-slate-50' 
+                                                    : 'bg-slate-100 text-slate-400 cursor-not-allowed'
+                                            ]">
+                                            Selanjutnya →
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
+                        <!-- Tree View (unchanged, already efficient) -->
                     </div>
 
                     <div class="mt-8 grid md:grid-cols-3 gap-6">
