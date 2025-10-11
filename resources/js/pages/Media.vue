@@ -102,23 +102,24 @@ const canShowPreview = (media) => {
                         <div v-for="media in medialist" :key="media.id"
                             class="group bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300">
                             <!-- Preview/Thumbnail Section -->
+                            <!-- Preview/Thumbnail Section -->
                             <div class="relative overflow-hidden bg-gradient-to-br from-amber-100 to-orange-100">
 
                                 <!-- Preview for PDF, Docs, Slides -->
-                                <div v-if="canShowPreview(media)" class="h-80 bg-white">
+                                <div v-if="canShowPreview(media)" class="h-[500px] bg-white">
                                     <iframe :src="media.embed_url + '&page=1'" class="w-full h-full" frameborder="0"
                                         loading="lazy"></iframe>
                                 </div>
 
                                 <!-- YouTube Video Player -->
-                                <div v-else-if="media.jenis_media === 'youtube'" class="h-80 bg-black">
+                                <div v-else-if="media.jenis_media === 'youtube'" class="h-[500px] bg-black">
                                     <iframe :src="media.embed_url" class="w-full h-full" frameborder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                         allowfullscreen loading="lazy"></iframe>
                                 </div>
 
                                 <!-- Icon for Others -->
-                                <div v-else class="h-80 flex items-center justify-center text-amber-600">
+                                <div v-else class="h-[500px] flex items-center justify-center text-amber-600">
                                     <div v-html="getFileIcon(media.jenis_media)"></div>
                                 </div>
 
