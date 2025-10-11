@@ -77,12 +77,6 @@ const canShowPreview = (media) => {
         <section class="relative py-20 bg-gradient-to-br from-slate-50 via-orange-50/50 to-amber-50/50">
             <div class="container mx-auto px-6 lg:px-8">
                 <div class="max-w-4xl mx-auto text-center">
-                    <div class="inline-block mb-6">
-                        <span
-                            class="text-sm font-semibold tracking-wider text-amber-700 uppercase px-4 py-2 bg-amber-100 rounded-full">
-                            Pusat Sumber Daya
-                        </span>
-                    </div>
 
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
                         <span class="bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">

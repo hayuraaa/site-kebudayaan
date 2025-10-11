@@ -10,7 +10,7 @@ const props = defineProps({
 });
 
 const mapContainer = ref(null);
-const currentView = ref('map'); // 'map', 'table', 'grid', 'tree'
+const currentView = ref('map');
 let map = null;
 
 const setView = (view) => {
@@ -27,68 +27,113 @@ onMounted(() => {
     link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
     document.head.appendChild(link);
 
+    // Load MarkerCluster CSS
+    const clusterCSS = document.createElement('link');
+    clusterCSS.rel = 'stylesheet';
+    clusterCSS.href = 'https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css';
+    document.head.appendChild(clusterCSS);
+
+    const clusterDefaultCSS = document.createElement('link');
+    clusterDefaultCSS.rel = 'stylesheet';
+    clusterDefaultCSS.href = 'https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css';
+    document.head.appendChild(clusterDefaultCSS);
+
     // Load Leaflet JS
     const script = document.createElement('script');
     script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
-    script.onload = initMap;
+    script.onload = () => {
+        // Load MarkerCluster JS after Leaflet
+        const clusterScript = document.createElement('script');
+        clusterScript.src = 'https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js';
+        clusterScript.onload = initMap;
+        document.head.appendChild(clusterScript);
+    };
     document.head.appendChild(script);
 });
 
 const initMap = () => {
     if (!mapContainer.value || map) return;
 
-    // Initialize map centered on Indonesia with zoom restrictions
     map = L.map(mapContainer.value, {
-        minZoom: 5,  // Batasan minimum zoom (tidak bisa zoom out lebih jauh)
-        maxZoom: 18  // Batasan maximum zoom (tidak bisa zoom in lebih dekat)
+        minZoom: 5,
+        maxZoom: 18
     }).setView([-2.5, 118], 5);
 
-    // Set max bounds to keep map focused on Indonesia region
     const indonesiaBounds = [
-        [-11, 95],  // Southwest coordinates
-        [6, 141]    // Northeast coordinates
+        [-11, 95],
+        [6, 141]
     ];
     map.setMaxBounds(indonesiaBounds);
-    map.on('drag', function() {
+    map.on('drag', function () {
         map.panInsideBounds(indonesiaBounds, { animate: false });
     });
 
-    // Add OpenStreetMap tiles
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap contributors',
         maxZoom: 18
     }).addTo(map);
 
-    // Add markers for each GLAM location
+    // MarkerCluster Group
+    const markers = L.markerClusterGroup({
+        chunkedLoading: true,
+        chunkInterval: 200,
+        chunkDelay: 50,
+        maxClusterRadius: 80,
+        spiderfyOnMaxZoom: true,
+        showCoverageOnHover: false,
+        zoomToBoundsOnClick: true
+    });
+
+    // Add markers to cluster group
     props.glamLocations.forEach(location => {
-        const marker = L.marker([location.coord.lat, location.coord.lng]).addTo(map);
+        const marker = L.marker([location.lat, location.lng]);
 
-        // Create popup content
         let popupContent = `<div class="p-2">
-      <h3 class="font-bold text-lg mb-2">${location.name}</h3>`;
+            <h3 class="font-bold text-lg mb-2">${location.name}</h3>`;
 
-        if (location.image) {
-            popupContent += `<img src="${location.image}" alt="${location.name}" class="w-full h-32 object-cover rounded mb-2" />`;
+        // Image lazy load
+        if (location.img) {
+            popupContent += `<div class="w-full h-32 bg-gray-200 rounded mb-2 flex items-center justify-center">
+                <span class="text-sm text-gray-500">📷 Memuat gambar...</span>
+            </div>`;
         }
 
-        if (location.wikipedia) {
-            popupContent += `<a href="${location.wikipedia}" target="_blank" class="text-blue-600 hover:underline text-sm block mb-1">Wikipedia →</a>`;
+        // Links
+        if (location.wp) {
+            popupContent += `<a href="${location.wp}" target="_blank" class="text-blue-600 hover:underline text-sm block mb-1">Wikipedia →</a>`;
         }
 
-        if (location.wikidata) {
-            const wikidataId = location.wikidata.split('/').pop();
-            popupContent += `<a href="${location.wikidata}" target="_blank" class="text-amber-600 hover:underline text-sm block">Wikidata (${wikidataId}) →</a>`;
+        if (location.wd) {
+            popupContent += `<a href="https://www.wikidata.org/wiki/${location.wd}" target="_blank" class="text-amber-600 hover:underline text-sm block">Wikidata (${location.wd}) →</a>`;
         }
 
         popupContent += `</div>`;
 
         marker.bindPopup(popupContent);
+
+        // Load image when popup opens
+        if (location.img) {
+            marker.on('popupopen', function () {
+                const popup = marker.getPopup();
+                const newContent = popupContent.replace(
+                    '<div class="w-full h-32 bg-gray-200 rounded mb-2 flex items-center justify-center"><span class="text-sm text-gray-500">📷 Memuat gambar...</span></div>',
+                    `<img src="${location.img}" alt="${location.name}" class="w-full h-32 object-cover rounded mb-2" loading="lazy" />`
+                );
+                popup.setContent(newContent);
+            });
+        }
+
+        markers.addLayer(marker);
     });
+
+    // Add cluster to map
+    map.addLayer(markers);
+
+    console.log(`✅ Loaded ${props.glamLocations.length} markers with clustering`);
 };
 
 // Group locations by province/region for tree view
 const groupedLocations = props.glamLocations.reduce((acc, location) => {
-    // Extract province from name (simple grouping)
     const words = location.name.split(' ');
     const province = words[words.length - 1] || 'Lainnya';
 
@@ -259,25 +304,6 @@ const groupedLocations = props.glamLocations.reduce((acc, location) => {
                                             Link</th>
                                     </tr>
                                 </thead>
-                                <tbody class="bg-white divide-y divide-slate-200">
-                                    <tr v-for="(location, index) in glamLocations" :key="index"
-                                        class="hover:bg-slate-50">
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-900">{{ index + 1 }}
-                                        </td>
-                                        <td class="px-6 py-4 text-sm text-slate-900">{{ location.name }}</td>
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-600">
-                                            {{ location.coord.lat.toFixed(4) }}, {{ location.coord.lng.toFixed(4) }}
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm">
-                                            <div class="flex gap-2">
-                                                <a v-if="location.wikipedia" :href="location.wikipedia" target="_blank"
-                                                    class="text-blue-600 hover:underline">Wikipedia</a>
-                                                <a v-if="location.wikidata" :href="location.wikidata" target="_blank"
-                                                    class="text-amber-600 hover:underline">Wikidata</a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
                             </table>
                         </div>
 
@@ -286,8 +312,8 @@ const groupedLocations = props.glamLocations.reduce((acc, location) => {
                             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                 <div v-for="(location, index) in glamLocations" :key="index"
                                     class="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
-                                    <div v-if="location.image" class="h-48 overflow-hidden">
-                                        <img :src="location.image" :alt="location.name"
+                                    <div v-if="location.img" class="h-48 overflow-hidden">
+                                        <img :src="location.img" :alt="location.name"
                                             class="w-full h-full object-cover" />
                                     </div>
                                     <div v-else
@@ -302,14 +328,15 @@ const groupedLocations = props.glamLocations.reduce((acc, location) => {
                                         <h3 class="font-semibold text-slate-900 mb-2 line-clamp-2">{{ location.name }}
                                         </h3>
                                         <p class="text-xs text-slate-500 mb-3">
-                                            {{ location.coord.lat.toFixed(4) }}, {{ location.coord.lng.toFixed(4) }}
+                                            {{ location.lat.toFixed(4) }}, {{ location.lng.toFixed(4) }}
                                         </p>
                                         <div class="flex gap-2">
-                                            <a v-if="location.wikipedia" :href="location.wikipedia" target="_blank"
+                                            <a v-if="location.wp" :href="location.wp" target="_blank"
                                                 class="text-xs px-3 py-1 bg-blue-100 text-blue-700 rounded-full hover:bg-blue-200">
                                                 Wikipedia
                                             </a>
-                                            <a v-if="location.wikidata" :href="location.wikidata" target="_blank"
+                                            <a v-if="location.wd" :href="`https://www.wikidata.org/wiki/${location.wd}`"
+                                                target="_blank"
                                                 class="text-xs px-3 py-1 bg-amber-100 text-amber-700 rounded-full hover:bg-amber-200">
                                                 Wikidata
                                             </a>
@@ -335,15 +362,14 @@ const groupedLocations = props.glamLocations.reduce((acc, location) => {
                                                 <div class="flex-1">
                                                     <p class="font-medium text-slate-900">{{ location.name }}</p>
                                                     <p class="text-xs text-slate-500 mt-1">
-                                                        {{ location.coord.lat.toFixed(4) }}, {{
-                                                            location.coord.lng.toFixed(4) }}
+                                                        {{ location.lat.toFixed(4) }}, {{ location.lng.toFixed(4) }}
                                                     </p>
                                                 </div>
                                                 <div class="flex gap-2 ml-4">
-                                                    <a v-if="location.wikipedia" :href="location.wikipedia"
-                                                        target="_blank"
+                                                    <a v-if="location.wp" :href="location.wp" target="_blank"
                                                         class="text-xs text-blue-600 hover:underline">Wiki</a>
-                                                    <a v-if="location.wikidata" :href="location.wikidata"
+                                                    <a v-if="location.wd"
+                                                        :href="`https://www.wikidata.org/wiki/${location.wd}`"
                                                         target="_blank"
                                                         class="text-xs text-amber-600 hover:underline">Data</a>
                                                 </div>
