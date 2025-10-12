@@ -16,11 +16,22 @@ const scrollToNextSection = () => {
   }
 };
 
+// Fungsi untuk mendapatkan URL gambar lengkap (sama seperti ModalBanner)
+const getImageUrl = (imagePath) => {
+  if (!imagePath) return '';
+  
+  if (imagePath.startsWith('http')) {
+    return imagePath;
+  }
+  
+  return `http://dashboard.wikimedia.or.id/storage/${imagePath}`;
+};
+
 // Fungsi untuk mendapatkan slider random atau default image
 const heroImage = computed(() => {
   if (props.sliders && props.sliders.length > 0) {
     const randomIndex = Math.floor(Math.random() * props.sliders.length);
-    return props.sliders[randomIndex].gambar;
+    return getImageUrl(props.sliders[randomIndex].gambar);
   }
   return '/hero_glam.png';
 });

@@ -2,6 +2,7 @@
 import { ref, computed } from 'vue';
 import { Link, usePage } from '@inertiajs/vue3';
 import { Menu, X, ChevronDown } from 'lucide-vue-next';
+import ScrollToTop from './ScrollToTop.vue';
 
 const mobileMenuOpen = ref(false);
 const MenuOpen = ref(false);
@@ -268,6 +269,7 @@ const isSubmenuActive = (submenu) => {
           <p>Copyright © 2025 - Lisensi dalam situs ini termasuk tulisan dan gambar merupakan CC-BY-SA 4.0, kecuali
             dinyatakan berbeda.</p>
         </div>
+    <ScrollToTop />
       </div>
     </footer>
   </div>
