@@ -8,18 +8,18 @@ import { Head, Link } from '@inertiajs/vue3';
     <Head title="Kegiatan" />
     <AppLayout>
         <!-- Hero Section -->
-        <section class="relative py-20 bg-gradient-to-br from-slate-50 via-orange-50/50 to-amber-50/50">
+        <section class="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50/50 to-cyan-50/50">
             <div class="container mx-auto px-6 lg:px-8">
                 <div class="max-w-4xl mx-auto text-center">
                     <div class="inline-block mb-6">
                         <span
-                            class="text-sm font-semibold tracking-wider text-amber-700 uppercase px-4 py-2 bg-amber-100 rounded-full">
+                            class="text-sm font-semibold tracking-wider text-[#006699] uppercase px-4 py-2 bg-blue-100 rounded-full">
                             Program Kebudayaan Wikimedia Indonesia
                         </span>
                     </div>
 
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-                        <span class="bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
+                        <span class="bg-gradient-to-r from-[#006699] to-[#0088cc] bg-clip-text text-transparent">
                             Kegiatan Kami
                         </span>
                     </h1>
@@ -55,7 +55,7 @@ import { Head, Link } from '@inertiajs/vue3';
                             </p>
                             <a href="https://id.wikimedia.org/wiki/Kopdar"
                                 target="_blank"
-                                class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-amber-600 to-orange-600 text-white rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
+                                class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#006699] to-[#0088cc] text-white rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
                                 Selengkapnya
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -97,7 +97,7 @@ import { Head, Link } from '@inertiajs/vue3';
                             </p>
                             <a href="https://id.wikimedia.org/wiki/WikiLatih/Kebudayaan"
                                 target="_blank"
-                                class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-amber-600 to-orange-600 text-white rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
+                                class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#006699] to-[#0088cc] text-white rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
                                 Selengkapnya
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -123,7 +123,7 @@ import { Head, Link } from '@inertiajs/vue3';
                             </p>
                             <a href="https://id.wikimedia.org/wiki/Panduan_Penyelenggaraan_Kompetisi_Wikisource"
                                 target="_blank"
-                                class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-amber-600 to-orange-600 text-white rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
+                                class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#006699] to-[#0088cc] text-white rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
                                 Selengkapnya
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -162,7 +162,7 @@ import { Head, Link } from '@inertiajs/vue3';
                             </p>
                             <a href="https://meta.wikimedia.org/wiki/Wikimedia_Indonesia/Hibah_GLAM_Indonesia"
                                 target="_blank"
-                                class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-amber-600 to-orange-600 text-white rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
+                                class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#006699] to-[#0088cc] text-white rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
                                 Selengkapnya
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -177,7 +177,7 @@ import { Head, Link } from '@inertiajs/vue3';
         </section>
 
         <!-- CTA Section -->
-        <section class="py-20 bg-gradient-to-r from-amber-600 to-orange-600">
+        <section class="py-20 bg-gradient-to-r from-[#006699] to-[#0088cc]">
             <div class="container mx-auto px-6 lg:px-8">
                 <div class="max-w-4xl mx-auto text-center text-white">
                     <h2 class="text-3xl md:text-4xl font-bold mb-6">
@@ -188,7 +188,7 @@ import { Head, Link } from '@inertiajs/vue3';
                         berkontribusi pada pelestarian budaya Indonesia.
                     </p>
                     <Link href="/kontak"
-                        class="inline-block px-8 py-4 bg-white text-amber-600 rounded-xl font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300">
+                        class="inline-block px-8 py-4 bg-white text-[#006699] rounded-xl font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300">
                     Hubungi Kami
                     </Link>
                 </div>

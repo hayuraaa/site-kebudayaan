@@ -44,18 +44,18 @@ const handleSubmit = () => {
     <Head title="Hubungi Kami" />
     <AppLayout>
         <!-- Hero Section -->
-        <section class="relative py-20 bg-gradient-to-br from-slate-50 via-orange-50/50 to-amber-50/50">
+        <section class="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50/50 to-cyan-50/50">
             <div class="container mx-auto px-6 lg:px-8">
                 <div class="max-w-4xl mx-auto text-center">
                     <div class="inline-block mb-6">
                         <span
-                            class="text-sm font-semibold tracking-wider text-amber-700 uppercase px-4 py-2 bg-amber-100 rounded-full">
+                            class="text-sm font-semibold tracking-wider text-[#006699] uppercase px-4 py-2 bg-blue-100 rounded-full">
                             Kebudayaan Wikimedia Indonesia
                         </span>
                     </div>
 
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-                        <span class="bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
+                        <span class="bg-gradient-to-r from-[#006699] to-[#0088cc] bg-clip-text text-transparent">
                             Hubungi Kami
                         </span>
                     </h1>
@@ -157,7 +157,7 @@ const handleSubmit = () => {
                                         Nama Lengkap <span class="text-red-500">*</span>
                                     </label>
                                     <input type="text" id="name" v-model="form.name" required
-                                        class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition bg-white"
+                                        class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent outline-none transition bg-white"
                                         :class="{ 'border-red-500': form.errors.name }"
                                         placeholder="Masukkan nama lengkap Anda" />
                                     <p v-if="form.errors.name" class="mt-1 text-sm text-red-600">{{ form.errors.name }}
@@ -170,7 +170,7 @@ const handleSubmit = () => {
                                         Email <span class="text-red-500">*</span>
                                     </label>
                                     <input type="email" id="email" v-model="form.email" required
-                                        class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition bg-white"
+                                        class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent outline-none transition bg-white"
                                         :class="{ 'border-red-500': form.errors.email }" placeholder="nama@email.com" />
                                     <p v-if="form.errors.email" class="mt-1 text-sm text-red-600">{{ form.errors.email
                                         }}</p>
@@ -182,7 +182,7 @@ const handleSubmit = () => {
                                         Nomor Telepon <span class="text-red-500">*</span>
                                     </label>
                                     <input type="tel" id="phone" v-model="form.phone" required
-                                        class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition bg-white"
+                                        class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent outline-none transition bg-white"
                                         :class="{ 'border-red-500': form.errors.phone }" placeholder="08xxxxxxxxxx" />
                                     <p v-if="form.errors.phone" class="mt-1 text-sm text-red-600">{{ form.errors.phone
                                         }}</p>
@@ -194,7 +194,7 @@ const handleSubmit = () => {
                                         Subjek <span class="text-red-500">*</span>
                                     </label>
                                     <input type="text" id="subject" v-model="form.subject" required
-                                        class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition bg-white"
+                                        class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent outline-none transition bg-white"
                                         :class="{ 'border-red-500': form.errors.subject }"
                                         placeholder="Topik pesan Anda" />
                                     <p v-if="form.errors.subject" class="mt-1 text-sm text-red-600">{{
@@ -207,7 +207,7 @@ const handleSubmit = () => {
                                         Pesan / Komentar <span class="text-red-500">*</span>
                                     </label>
                                     <textarea id="message" v-model="form.message" required rows="5"
-                                        class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition resize-none bg-white"
+                                        class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent outline-none transition resize-none bg-white"
                                         :class="{ 'border-red-500': form.errors.message }"
                                         placeholder="Tuliskan pesan atau komentar Anda di sini..."></textarea>
                                     <p v-if="form.errors.message" class="mt-1 text-sm text-red-600">{{
@@ -217,7 +217,7 @@ const handleSubmit = () => {
                                 <!-- Submit Button -->
                                 <div>
                                     <button type="submit" :disabled="form.processing"
-                                        class="w-full bg-gradient-to-r from-amber-600 to-orange-600 hover:shadow-lg text-white font-semibold py-3 px-6 rounded-lg transition duration-200 ease-in-out transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none">
+                                        class="w-full bg-gradient-to-r from-[#006699] to-[#0088cc] hover:shadow-lg text-white font-semibold py-3 px-6 rounded-lg transition duration-200 ease-in-out transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none">
                                         <span v-if="form.processing">Mengirim...</span>
                                         <span v-else>Kirim Pesan</span>
                                     </button>
@@ -235,7 +235,7 @@ const handleSubmit = () => {
         <section class="py-20 bg-white">
             <div class="container mx-auto px-6 lg:px-8">
                 <div class="max-w-7xl mx-auto">
-                    <div class="bg-gradient-to-r from-amber-600 to-orange-600 rounded-3xl p-8 md:p-12 shadow-xl">
+                    <div class="bg-gradient-to-r from-[#006699] to-[#0088cc] rounded-3xl p-8 md:p-12 shadow-xl">
                         <div class="grid md:grid-cols-3 gap-12 text-white">
 
                             <!-- Alamat -->

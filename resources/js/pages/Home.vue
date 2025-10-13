@@ -42,7 +42,7 @@ const heroImage = computed(() => {
   <AppLayout>
     <!-- Hero Section -->
     <section class="relative min-h-[85vh] flex items-center overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-orange-50/50 to-amber-50/50" />
+      <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/50 to-cyan-50/50" />
 
       <div class="container mx-auto px-6 lg:px-8 py-20 relative z-10">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -57,14 +57,14 @@ const heroImage = computed(() => {
           <div class="space-y-8 animate-fade-in-delay order-1 lg:order-2">
             <div class="inline-block">
               <span
-                class="text-sm font-semibold tracking-wider text-amber-700 uppercase px-4 py-2 bg-amber-100 rounded-full">
+                class="text-sm font-semibold tracking-wider text-[#006699] uppercase px-4 py-2 bg-blue-100 rounded-full">
                 Kebudayaan Wikimedia Indonesia
               </span>
             </div>
 
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
               Memperkenalkan
-              <span class="block mt-2 bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
+              <span class="block mt-2 bg-gradient-to-r from-[#006699] to-[#0088cc] bg-clip-text text-transparent">
                 Pusparagam Budaya Indonesia ke Dunia
               </span>
             </h1>
@@ -78,11 +78,11 @@ const heroImage = computed(() => {
 
             <div class="flex flex-wrap gap-4 pt-2">
               <button @click="scrollToNextSection"
-                class="px-8 py-3.5 bg-gradient-to-r from-amber-600 to-orange-600 text-white rounded-xl font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300">
+                class="px-8 py-3.5 bg-gradient-to-r from-[#006699] to-[#0088cc] text-white rounded-xl font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300">
                 Selengkapnya
               </button>
               <Link href="/kontak"
-                class="px-8 py-3.5 border-2 border-amber-600 text-amber-600 rounded-xl font-semibold hover:bg-amber-600 hover:text-white transition-all duration-300">
+                class="px-8 py-3.5 border-2 border-[#006699] text-[#006699] rounded-xl font-semibold hover:bg-[#006699] hover:text-white transition-all duration-300">
                 Hubungi Kami
               </Link>
             </div>
@@ -129,14 +129,14 @@ const heroImage = computed(() => {
           <div class="relative">
             <!-- Decorative Background -->
             <div
-              class="absolute inset-0 bg-gradient-to-br from-amber-100/50 to-orange-100/50 rounded-3xl transform rotate-3">
+              class="absolute inset-0 bg-gradient-to-br from-blue-100/50 to-cyan-100/50 rounded-3xl transform rotate-3">
             </div>
 
             <!-- Right: Project Logos -->
             <div class="relative">
               <!-- Decorative Background -->
               <div
-                class="absolute inset-0 bg-gradient-to-br from-amber-100/50 to-orange-100/50 rounded-3xl transform rotate-3">
+                class="absolute inset-0 bg-gradient-to-br from-blue-100/50 to-cyan-100/50 rounded-3xl transform rotate-3">
               </div>
 
               <!-- Logos Container -->
@@ -144,7 +144,7 @@ const heroImage = computed(() => {
                 <div class="grid grid-cols-2 gap-8">
                   <!-- Logo 1 - Wikipedia -->
                   <a href="https://id.wikipedia.org" target="_blank" rel="noopener noreferrer"
-                    class="flex flex-col items-center justify-center p-6 rounded-2xl bg-slate-50 hover:bg-amber-50 transition-all duration-300 group cursor-pointer">
+                    class="flex flex-col items-center justify-center p-6 rounded-2xl bg-slate-50 hover:bg-blue-50 transition-all duration-300 group cursor-pointer">
                     <div class="w-20 h-28 mb-3 flex items-center justify-center">
                       <img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Wikipedia-logo-v2-wordmark.svg"
                         alt="Wikipedia" class="w-full h-full object-contain" />
@@ -153,7 +153,7 @@ const heroImage = computed(() => {
 
                   <!-- Logo 2 - Wiktionary -->
                   <a href="https://id.wiktionary.org" target="_blank" rel="noopener noreferrer"
-                    class="flex flex-col items-center justify-center p-6 rounded-2xl bg-slate-50 hover:bg-amber-50 transition-all duration-300 group cursor-pointer">
+                    class="flex flex-col items-center justify-center p-6 rounded-2xl bg-slate-50 hover:bg-blue-50 transition-all duration-300 group cursor-pointer">
                     <div class="w-20 h-28 mb-3 flex items-center justify-center">
                       <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Wiktionary-logo-id.svg"
                         alt="Wiktionary" class="w-full h-full object-contain" />
@@ -162,7 +162,7 @@ const heroImage = computed(() => {
 
                   <!-- Logo 3 - Commons (Centered) -->
                   <a href="https://commons.wikimedia.org" target="_blank" rel="noopener noreferrer"
-                    class="flex flex-col items-center justify-center p-6 rounded-2xl bg-slate-50 hover:bg-amber-50 transition-all duration-300 group col-span-2 cursor-pointer">
+                    class="flex flex-col items-center justify-center p-6 rounded-2xl bg-slate-50 hover:bg-blue-50 transition-all duration-300 group col-span-2 cursor-pointer">
                     <div class="w-50 h-28 mb-3 flex items-center justify-center">
                       <img
                         src="https://upload.wikimedia.org/wikipedia/commons/9/94/Wikimedia_Commons_logo_Spanish_horizontal_in_colour.svg"
@@ -172,7 +172,7 @@ const heroImage = computed(() => {
 
                   <!-- Logo 4 - Wikidata -->
                   <a href="https://www.wikidata.org" target="_blank" rel="noopener noreferrer"
-                    class="flex flex-col items-center justify-center p-6 rounded-2xl bg-slate-50 hover:bg-amber-50 transition-all duration-300 group cursor-pointer">
+                    class="flex flex-col items-center justify-center p-6 rounded-2xl bg-slate-50 hover:bg-blue-50 transition-all duration-300 group cursor-pointer">
                     <div class="w-20 h-28 mb-3 flex items-center justify-center">
                       <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Wikidata-Archi38.svg" alt="Wikidata"
                         class="w-full h-full object-contain" />
@@ -181,7 +181,7 @@ const heroImage = computed(() => {
 
                   <!-- Logo 5 - Wikisource -->
                   <a href="https://id.wikisource.org" target="_blank" rel="noopener noreferrer"
-                    class="flex flex-col items-center justify-center p-6 rounded-2xl bg-slate-50 hover:bg-amber-50 transition-all duration-300 group cursor-pointer">
+                    class="flex flex-col items-center justify-center p-6 rounded-2xl bg-slate-50 hover:bg-blue-50 transition-all duration-300 group cursor-pointer">
                     <div class="w-20 h-28 mb-3 flex items-center justify-center">
                       <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Wikisource-logo-id.svg"
                         alt="Wikisource" class="w-full h-full object-contain" />

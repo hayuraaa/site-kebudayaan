@@ -46,13 +46,13 @@ const isSubmenuActive = (submenu) => {
                 <button :class="[
                   'relative px-6 py-2.5 text-sm font-medium transition-all duration-200 flex items-center gap-1',
                   isSubmenuActive(item.submenu)
-                    ? 'text-[#f54a00]'
-                    : 'text-black hover:text-[#f54a00]'
+                    ? 'text-[#006699]'
+                    : 'text-black hover:text-[#006699]'
                 ]">
                   {{ item.name }}
                   <ChevronDown class="w-4 h-4" />
                   <span v-if="isSubmenuActive(item.submenu)"
-                    class="absolute bottom-0 left-0 right-0 h-0.5 bg-[#f54a00] rounded-full"></span>
+                    class="absolute bottom-0 left-0 right-0 h-0.5 bg-[#006699] rounded-full"></span>
                 </button>
 
                 <!-- Dropdown Menu -->
@@ -62,8 +62,8 @@ const isSubmenuActive = (submenu) => {
                     <Link v-for="subitem in item.submenu" :key="subitem.name" :href="subitem.href" :class="[
                       'block px-4 py-2.5 text-sm transition-colors',
                       isActive(subitem.href)
-                        ? 'text-[#f54a00] bg-blue-50'
-                        : 'text-gray-700 hover:text-[#f54a00] hover:bg-gray-50'
+                        ? 'text-[#006699] bg-blue-50'
+                        : 'text-gray-700 hover:text-[#006699] hover:bg-gray-50'
                     ]">
                     {{ subitem.name }}
                     </Link>
@@ -75,12 +75,12 @@ const isSubmenuActive = (submenu) => {
               <Link v-else :href="item.href" :class="[
                 'relative px-6 py-2.5 text-sm font-medium transition-all duration-200',
                 isActive(item.href)
-                  ? 'text-[#f54a00]'
-                  : 'text-black hover:text-[#f54a00]'
+                  ? 'text-[#006699]'
+                  : 'text-black hover:text-[#006699]'
               ]">
               {{ item.name }}
               <span v-if="isActive(item.href)"
-                class="absolute bottom-0 left-0 right-0 h-0.5 bg-[#f54a00] rounded-full"></span>
+                class="absolute bottom-0 left-0 right-0 h-0.5 bg-[#006699] rounded-full"></span>
               </Link>
             </template>
           </div>
@@ -102,11 +102,11 @@ const isSubmenuActive = (submenu) => {
                 <button @click="programMenuOpen = !programMenuOpen" :class="[
                   'w-full text-left relative px-3 py-2 text-sm font-medium transition-all flex items-center justify-between',
                   isSubmenuActive(item.submenu)
-                    ? 'text-[#f54a00] pl-6'
-                    : 'text-black hover:text-[#f54a00] hover:pl-6'
+                    ? 'text-[#006699] pl-6'
+                    : 'text-black hover:text-[#006699] hover:pl-6'
                 ]">
                   <span v-if="isSubmenuActive(item.submenu)"
-                    class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-[#f54a00] rounded-r-full"></span>
+                    class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-[#006699] rounded-r-full"></span>
                   {{ item.name }}
                   <ChevronDown :class="['w-4 h-4 transition-transform', programMenuOpen ? 'rotate-180' : '']" />
                 </button>
@@ -116,8 +116,8 @@ const isSubmenuActive = (submenu) => {
                   <Link v-for="subitem in item.submenu" :key="subitem.name" :href="subitem.href" :class="[
                     'block px-3 py-2 text-sm transition-all',
                     isActive(subitem.href)
-                      ? 'text-[#f54a00] font-medium'
-                      : 'text-gray-600 hover:text-[#f54a00]'
+                      ? 'text-[#006699] font-medium'
+                      : 'text-gray-600 hover:text-[#006699]'
                   ]" @click="mobileMenuOpen = false">
                   {{ subitem.name }}
                   </Link>
@@ -128,11 +128,11 @@ const isSubmenuActive = (submenu) => {
               <Link v-else :href="item.href" :class="[
                 'relative px-3 py-2 text-sm font-medium transition-all',
                 isActive(item.href)
-                  ? 'text-[#f54a00] pl-6'
-                  : 'text-black hover:text-[#f54a00] hover:pl-6'
+                  ? 'text-[#006699] pl-6'
+                  : 'text-black hover:text-[#006699] hover:pl-6'
               ]" @click="mobileMenuOpen = false">
               <span v-if="isActive(item.href)"
-                class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-[#f54a00] rounded-r-full"></span>
+                class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-[#006699] rounded-r-full"></span>
               {{ item.name }}
               </Link>
             </template>

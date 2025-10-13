@@ -183,7 +183,7 @@ const initMap = () => {
         }
 
         if (location.wd) {
-            popupContent += `<a href="https://www.wikidata.org/wiki/${location.wd}" target="_blank" class="text-amber-600 hover:underline text-sm block">Wikidata (${location.wd}) →</a>`;
+            popupContent += `<a href="https://www.wikidata.org/wiki/${location.wd}" target="_blank" class="text-[#006699] hover:underline text-sm block">Wikidata (${location.wd}) →</a>`;
         }
 
         popupContent += `</div>`;
@@ -209,17 +209,17 @@ const groupedLocations = props.glamLocations.reduce((acc, location) => {
 <template>
     <Head title="GLAM Terbuka" />
     <AppLayout>
-        <section class="relative py-20 bg-gradient-to-br from-slate-50 via-orange-50/50 to-amber-50/50">
+        <section class="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50/50 to-cyan-50/50">
             <div class="container mx-auto px-6 lg:px-8">
                 <div class="max-w-4xl mx-auto text-center">
                     <div class="inline-block mb-6">
-                        <span class="text-sm font-semibold tracking-wider text-amber-700 uppercase px-4 py-2 bg-amber-100 rounded-full">
+                        <span class="text-sm font-semibold tracking-wider text-[#006699] uppercase px-4 py-2 bg-blue-100 rounded-full">
                             Galleries, Libraries, Archives and Museums
                         </span>
                     </div>
 
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-                        <span class="bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
+                        <span class="bg-gradient-to-r from-[#006699] to-[#0088cc] bg-clip-text text-transparent">
                             GLAM Terbuka
                         </span>
                     </h1>
@@ -232,7 +232,7 @@ const groupedLocations = props.glamLocations.reduce((acc, location) => {
 
                     <div class="flex flex-wrap justify-center gap-8 pt-6">
                         <div class="text-center">
-                            <div class="text-4xl font-bold text-amber-600">{{ totalLocations }}+</div>
+                            <div class="text-4xl font-bold text-[#006699]">{{ totalLocations }}+</div>
                             <div class="text-sm text-slate-600 mt-1">Lokasi GLAM</div>
                         </div>
                     </div>
@@ -270,7 +270,7 @@ const groupedLocations = props.glamLocations.reduce((acc, location) => {
                             <div class="flex flex-wrap gap-2">
                                 <button @click="setView('map')" :class="[
                                     'px-4 py-2 rounded-lg font-medium transition-all duration-200',
-                                    currentView === 'map' ? 'bg-amber-600 text-white shadow-md' : 'bg-white text-slate-700 hover:bg-slate-100'
+                                    currentView === 'map' ? 'bg-[#006699] text-white shadow-md' : 'bg-white text-slate-700 hover:bg-slate-100'
                                 ]">
                                     <span class="flex items-center gap-2">
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -282,7 +282,7 @@ const groupedLocations = props.glamLocations.reduce((acc, location) => {
 
                                 <button @click="setView('table')" :class="[
                                     'px-4 py-2 rounded-lg font-medium transition-all duration-200',
-                                    currentView === 'table' ? 'bg-amber-600 text-white shadow-md' : 'bg-white text-slate-700 hover:bg-slate-100'
+                                    currentView === 'table' ? 'bg-[#006699] text-white shadow-md' : 'bg-white text-slate-700 hover:bg-slate-100'
                                 ]">
                                     <span class="flex items-center gap-2">
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -294,7 +294,7 @@ const groupedLocations = props.glamLocations.reduce((acc, location) => {
 
                                 <button @click="setView('grid')" :class="[
                                     'px-4 py-2 rounded-lg font-medium transition-all duration-200',
-                                    currentView === 'grid' ? 'bg-amber-600 text-white shadow-md' : 'bg-white text-slate-700 hover:bg-slate-100'
+                                    currentView === 'grid' ? 'bg-[#006699] text-white shadow-md' : 'bg-white text-slate-700 hover:bg-slate-100'
                                 ]">
                                     <span class="flex items-center gap-2">
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -331,7 +331,7 @@ const groupedLocations = props.glamLocations.reduce((acc, location) => {
                                         <td class="px-6 py-4 whitespace-nowrap text-sm">
                                             <div class="flex gap-2">
                                                 <a v-if="location.wp" :href="location.wp" target="_blank" class="text-blue-600 hover:underline">Wikipedia</a>
-                                                <a v-if="location.wd" :href="`https://www.wikidata.org/wiki/${location.wd}`" target="_blank" class="text-amber-600 hover:underline">Wikidata</a>
+                                                <a v-if="location.wd" :href="`https://www.wikidata.org/wiki/${location.wd}`" target="_blank" class="text-[#006699] hover:underline">Wikidata</a>
                                             </div>
                                         </td>
                                     </tr>
@@ -368,7 +368,7 @@ const groupedLocations = props.glamLocations.reduce((acc, location) => {
                                                 :class="[
                                                     'min-w-[40px] h-[40px] rounded-lg font-medium transition-colors',
                                                     page === currentPage 
-                                                        ? 'bg-amber-600 text-white' 
+                                                        ? 'bg-[#006699] text-white' 
                                                         : page === '...'
                                                         ? 'cursor-default text-slate-400'
                                                         : 'bg-white border border-slate-300 text-slate-700 hover:bg-slate-50'
@@ -415,7 +415,7 @@ const groupedLocations = props.glamLocations.reduce((acc, location) => {
                                                 <a v-if="location.wp" :href="location.wp" target="_blank" class="text-xs px-3 py-1 bg-blue-100 text-blue-700 rounded-full hover:bg-blue-200">
                                                     Wikipedia
                                                 </a>
-                                                <a v-if="location.wd" :href="`https://www.wikidata.org/wiki/${location.wd}`" target="_blank" class="text-xs px-3 py-1 bg-amber-100 text-amber-700 rounded-full hover:bg-amber-200">
+                                                <a v-if="location.wd" :href="`https://www.wikidata.org/wiki/${location.wd}`" target="_blank" class="text-xs px-3 py-1 bg-blue-100 text-[#006699] rounded-full hover:bg-blue-200">
                                                     Wikidata
                                                 </a>
                                             </div>
@@ -454,7 +454,7 @@ const groupedLocations = props.glamLocations.reduce((acc, location) => {
                                                 :class="[
                                                     'min-w-[40px] h-[40px] rounded-lg font-medium transition-colors',
                                                     page === currentPage 
-                                                        ? 'bg-amber-600 text-white' 
+                                                        ? 'bg-[#006699] text-white' 
                                                         : page === '...'
                                                         ? 'cursor-default text-slate-400'
                                                         : 'bg-white border border-slate-300 text-slate-700 hover:bg-slate-50'
@@ -495,7 +495,7 @@ const groupedLocations = props.glamLocations.reduce((acc, location) => {
                             <p class="text-slate-600 text-sm">Pusat sumber pengetahuan dan informasi untuk masyarakat</p>
                         </div>
 
-                        <div class="bg-gradient-to-br from-amber-50 to-amber-100 p-6 rounded-xl">
+                        <div class="bg-gradient-to-br from-cyan-50 to-blue-100 p-6 rounded-xl">
                             <div class="text-3xl mb-2">🎨</div>
                             <h3 class="font-bold text-lg text-slate-900 mb-2">Galeri & Arsip</h3>
                             <p class="text-slate-600 text-sm">Tempat penyimpanan dan pameran karya seni serta dokumen bersejarah</p>
@@ -557,7 +557,7 @@ const groupedLocations = props.glamLocations.reduce((acc, location) => {
             </div>
         </section>
 
-        <section class="py-20 bg-gradient-to-r from-amber-600 to-orange-600">
+        <section class="py-20 bg-gradient-to-r from-[#006699] to-[#0088cc]">
             <div class="container mx-auto px-6 lg:px-8">
                 <div class="max-w-4xl mx-auto text-center text-white">
                     <h2 class="text-3xl md:text-4xl font-bold mb-6">
@@ -567,7 +567,7 @@ const groupedLocations = props.glamLocations.reduce((acc, location) => {
                         Apakah institusi Anda ingin membagikan koleksi digital secara terbuka?
                         Mari berkolaborasi untuk memperkaya pengetahaan Indonesia di dunia digital.
                     </p>
-                    <a href="/kontak" class="inline-block px-8 py-4 bg-white text-amber-600 rounded-xl font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300">
+                    <a href="/kontak" class="inline-block px-8 py-4 bg-white text-[#006699] rounded-xl font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300">
                         Hubungi Kami
                     </a>
                 </div>

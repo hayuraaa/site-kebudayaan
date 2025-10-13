@@ -7,17 +7,17 @@ import { Head } from '@inertiajs/vue3';
   <Head title="Kebijakan Ruang Ramah" />
   <AppLayout>
     <!-- Hero Section -->
-    <section class="relative py-20 bg-gradient-to-br from-slate-50 via-orange-50/50 to-amber-50/50">
+    <section class="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50/50 to-cyan-50/50">
       <div class="container mx-auto px-6 lg:px-8">
         <div class="max-w-4xl mx-auto text-center">
           <div class="inline-block mb-6">
-            <span class="text-sm font-semibold tracking-wider text-amber-700 uppercase px-4 py-2 bg-amber-100 rounded-full">
+            <span class="text-sm font-semibold tracking-wider text-[#006699] uppercase px-4 py-2 bg-blue-100 rounded-full">
               Komunitas Wikimedia Indonesia
             </span>
           </div>
           
           <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-            <span class="bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
+            <span class="bg-gradient-to-r from-[#006699] to-[#0088cc] bg-clip-text text-transparent">
               Kebijakan Ruang Ramah
             </span>
           </h1>
@@ -71,7 +71,7 @@ import { Head } from '@inertiajs/vue3';
     <section class="py-20 bg-gradient-to-b from-white to-slate-50">
       <div class="container mx-auto px-6 lg:px-8">
         <div class="max-w-6xl mx-auto">
-          <div class="bg-gradient-to-r from-amber-600 to-orange-600 rounded-3xl p-8 md:p-12 shadow-xl">
+          <div class="bg-gradient-to-r from-[#006699] to-[#0088cc] rounded-3xl p-8 md:p-12 shadow-xl">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
               Definisi Pelecehan
             </h2>
@@ -162,7 +162,7 @@ import { Head } from '@inertiajs/vue3';
     <section class="py-20 bg-gradient-to-b from-white to-slate-50">
       <div class="container mx-auto px-6 lg:px-8">
         <div class="max-w-6xl mx-auto">
-          <div class="bg-gradient-to-r from-amber-600 to-orange-600 rounded-3xl p-8 md:p-12 shadow-xl">
+          <div class="bg-gradient-to-r from-[#006699] to-[#0088cc] rounded-3xl p-8 md:p-12 shadow-xl">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
               Tindakan Pencegahan
             </h2>

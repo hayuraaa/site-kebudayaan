@@ -74,12 +74,12 @@ const canShowPreview = (media) => {
     <Head title="Media" />
     <AppLayout>
         <!-- Hero Section -->
-        <section class="relative py-20 bg-gradient-to-br from-slate-50 via-orange-50/50 to-amber-50/50">
+        <section class="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50/50 to-cyan-50/50">
             <div class="container mx-auto px-6 lg:px-8">
                 <div class="max-w-4xl mx-auto text-center">
 
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-                        <span class="bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
+                        <span class="bg-gradient-to-r from-[#006699] to-[#0088cc] bg-clip-text text-transparent">
                             Media & Materi
                         </span>
                     </h1>
@@ -119,14 +119,14 @@ const canShowPreview = (media) => {
                                 </div>
 
                                 <!-- Icon for Others -->
-                                <div v-else class="h-[500px] flex items-center justify-center text-amber-600">
+                                <div v-else class="h-[500px] flex items-center justify-center text-[#006699]">
                                     <div v-html="getFileIcon(media.jenis_media)"></div>
                                 </div>
 
                                 <!-- Media Type Badge -->
                                 <div class="absolute top-4 right-4">
                                     <span
-                                        class="px-3 py-1 bg-white/90 backdrop-blur-sm text-amber-700 text-xs font-semibold rounded-full uppercase">
+                                        class="px-3 py-1 bg-white/90 backdrop-blur-sm text-[#006699] text-xs font-semibold rounded-full uppercase">
                                         {{ getMediaTypeLabel(media.jenis_media) }}
                                     </span>
                                 </div>
@@ -135,7 +135,7 @@ const canShowPreview = (media) => {
                             <!-- Content -->
                             <div class="p-6">
                                 <h3
-                                    class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-amber-600 transition-colors">
+                                    class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-[#006699] transition-colors">
                                     {{ media.judul }}
                                 </h3>
 
@@ -146,7 +146,7 @@ const canShowPreview = (media) => {
                                 <!-- Action Button -->
                                 <div class="flex gap-3">
                                     <a :href="media.url_media" target="_blank"
-                                        class="flex-1 px-6 py-3 bg-gradient-to-r from-amber-600 to-orange-600 text-white rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
+                                        class="flex-1 px-6 py-3 bg-gradient-to-r from-[#006699] to-[#0088cc] text-white rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
                                         <span>Buka Media</span>
                                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -161,7 +161,7 @@ const canShowPreview = (media) => {
 
                     <!-- Empty State -->
                     <div v-if="!medialist || medialist.length === 0" class="text-center py-20">
-                        <div class="text-amber-600 mb-4">
+                        <div class="text-[#006699] mb-4">
                             <svg class="w-20 h-20 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -183,7 +183,7 @@ const canShowPreview = (media) => {
                         <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
                             Tonton Juga Video Aktivitas
                             <span
-                                class="block mt-2 bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
+                                class="block mt-2 bg-gradient-to-r from-[#006699] to-[#0088cc] bg-clip-text text-transparent">
                                 GLAM Indonesia
                             </span>
                         </h2>
@@ -213,7 +213,7 @@ const canShowPreview = (media) => {
                     <!-- Additional Info -->
                     <div class="text-center mt-8">
                         <a href="https://www.youtube.com/@WikimediaIndonesia" target="_blank" rel="noopener noreferrer"
-                            class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-amber-600 to-orange-600 text-white rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
+                            class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#006699] to-[#0088cc] text-white rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                                 <path
                                     d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" />
@@ -226,7 +226,7 @@ const canShowPreview = (media) => {
         </section>
 
         <!-- CTA Section -->
-        <section class="py-20 bg-gradient-to-r from-amber-600 to-orange-600">
+        <section class="py-20 bg-gradient-to-r from-[#006699] to-[#0088cc]">
             <div class="container mx-auto px-6 lg:px-8">
                 <div class="max-w-4xl mx-auto text-center text-white">
                     <h2 class="text-3xl md:text-4xl font-bold mb-6">
@@ -236,7 +236,7 @@ const canShowPreview = (media) => {
                         Hubungi kami untuk mendapatkan panduan lebih lanjut atau request materi pembelajaran khusus.
                     </p>
                     <a href="/kontak"
-                        class="inline-block px-8 py-4 bg-white text-amber-600 rounded-xl font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300">
+                        class="inline-block px-8 py-4 bg-white text-[#006699] rounded-xl font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300">
                         Hubungi Kami
                     </a>
                 </div>

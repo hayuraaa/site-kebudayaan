@@ -33,7 +33,7 @@ onUnmounted(() => {
     <button
       v-if="isVisible"
       @click="scrollToTop"
-      class="fixed bottom-8 right-8 z-50 bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+      class="fixed bottom-8 right-8 z-50 bg-gradient-to-r from-[#006699] to-[#0088cc] hover:from-[#005580] hover:to-[#006699] text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
       aria-label="Scroll to top"
     >
       <ChevronUp class="w-6 h-6" />
