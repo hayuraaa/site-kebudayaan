@@ -6,22 +6,22 @@ const sumatraPartners = [
   {
     name: 'Pusat Penelitian Kelapa Sawit, Medan',
     collection: 'Buku-buku tentang perkebunan dalam bahasa Belanda',
-    href: '#'
+    href: 'https://commons.wikimedia.org/wiki/Category:Scanned_from_Perpustakaan_PPKS'
   },
   {
     name: 'Koleksi A. Damhoeri, Payakumbuh',
     collection: 'Karya tulisan sastrawan A. Damhoeri yang dibuka bebas.',
-    href: '#'
+    href: 'https://commons.wikimedia.org/wiki/Category:Scanned_from_A._Damhoeri%27s_collection'
   },
   {
     name: 'Balai Bahasa Provinsi Sumatera Barat, Padang',
     collection: 'Buku-buku terbitan BBPSB dan literasi Minangkabau',
-    href: '#'
+    href: 'https://commons.wikimedia.org/wiki/Category:Balai_Bahasa_Provinsi_Sumatera_Barat'
   },
   {
     name: 'Museum Uang Sumatera, Medan',
     collection: 'Uang kertas dan koin kerajaan, ORI dan ORIDA serta token perkebunan',
-    href: '#'
+    href: 'https://commons.wikimedia.org/wiki/Commons:Museum_Uang_Sumatera'
   },
   {
     name: 'Kutub Chanah, Maninjau',
@@ -31,12 +31,12 @@ const sumatraPartners = [
   {
     name: 'Pusat Dokumentasi dan Informasi Kebudayaan Minangkabau, Padang Panjang',
     collection: 'Majalah terbitan Sumatra Barat sebelum kemerdekaan',
-    href: '#'
+    href: 'https://commons.wikimedia.org/wiki/Commons:Pusat_Dokumentasi_dan_Informasi_Kebudayaan_Minangkabau'
   },
   {
     name: 'Museum Daerah Deli Serdang, Deli Serdang',
     collection: 'Sejarah dan Budaya Kabupaten Deli Serdang',
-    href: '#'
+    href: 'https://commons.wikimedia.org/wiki/Commons:Museum_Daerah_Deli_Serdang'
   }
 ];
 
@@ -44,57 +44,57 @@ const javaBaliNusaPartners = [
   {
     name: 'Perpustakaan Ajip Rosidi, Bandung',
     collection: 'Majalah berbahasa Sunda, Ensiklopedi dan naskah kuno',
-    href: '#'
+    href: 'https://commons.wikimedia.org/wiki/Category:Scanned_from_Ajip_Rosidi_Library'
   },
   {
     name: 'Yayasan Sastra Lestari, Surakarta',
     collection: 'Majalah Kajawen yang beraksara jawa',
-    href: '#'
+    href: 'https://commons.wikimedia.org/wiki/Category:Majalah_Kajawen'
   },
   {
     name: 'Indonesian Visual Art Archive, Yogyakarta',
     collection: 'Koleksi arsip artikel, video dan audio seni.',
-    href: '#'
+    href: 'https://commons.wikimedia.org/wiki/Category:Indonesian_Visual_Art_Archive'
   },
   {
     name: 'History of Java Museum, Yogyakarta',
     collection: 'Koleksi seni dan budaya jawa',
-    href: '#'
+    href: 'https://commons.wikimedia.org/wiki/Category:History_of_Java_Museum'
   },
   {
     name: 'Museum Tamansiswa Dewantara Kirti Griya, Yogyakarta',
     collection: 'Surat-surat Ki Hajar Dewantara, Buku dan dokumen lainnya',
-    href: '#'
+    href: 'https://commons.wikimedia.org/wiki/Category:Dewantara_Kirti_Griya_Museum'
   },
   {
     name: 'Museum Daerah Dr. (H.C.) Oemboe Hina Kapita, Sumba',
     collection: 'Keramik pada zaman pra-sejarah',
-    href: '#'
+    href: 'https://commons.wikimedia.org/wiki/Category:Images_from_Museum_Dr._%28H.C%29_Oemboe_Hina_Kapita'
   },
   {
     name: 'Museum Pasifika, Bali',
     collection: 'Koleksi lukisan Bali dan Internasional',
-    href: '#'
+    href: 'https://commons.wikimedia.org/wiki/Category:Museum_Pasifika'
   },
   {
     name: 'Indonesian Heritage Museum, Jawa Timur',
     collection: 'Koleksi seni dan budaya Indonesia',
-    href: '#'
+    href: 'https://commons.wikimedia.org/wiki/Category:Indonesian_Heritage_Museum'
   },
   {
     name: 'Dinas Penerangan TNI Angkatan Udara, Yogyakarta',
     collection: 'Foto-foto pesawat tempur dan Alutsisa TNI AU',
-    href: '#'
+    href: 'https://commons.wikimedia.org/wiki/Category:Museum_Dirgantara_Mandala'
   },
   {
     name: 'Majalah Horison, Jakarta',
     collection: 'Majalah sastra Horison',
-    href: '#'
+    href: 'https://commons.wikimedia.org/wiki/Category:Majalah_Horison'
   },
   {
     name: 'Indonesian Islamic Art Museum, Jawa Timur',
     collection: 'Koleksi seni Islam di Nusantara dan juga dunia',
-    href: '#'
+    href: 'https://commons.wikimedia.org/wiki/Category:Indonesian_Islamic_Art_Museum'
   }
 ];
 
@@ -102,17 +102,17 @@ const netherlandsPartners = [
   {
     name: 'Netherlands Institute for Sound and Vision',
     collection: 'Film propaganda Jepang',
-    href: '#'
+    href: 'https://commons.wikimedia.org/wiki/Category:Japanese_Propaganda_Films'
   },
   {
     name: 'Nationaal Museum van Wereldculturen',
     collection: 'Foto-foto dengan tajuk Indonesia pra- dan pascakemerdekaan',
-    href: '#'
+    href: 'https://commons.wikimedia.org/wiki/Category:NMVW_files_Indonesian_Independence_2020-09'
   },
   {
     name: 'Koninklijk Instituut voor Taal-, Land- en Volkenkunde (KITLV)',
     collection: 'Indonesia pra-kemerdekaan Bukittinggi, Batavia dan Yogyakarta',
-    href: '#'
+    href: 'https://commons.wikimedia.org/wiki/Category:Pictures_from_KITLV_requested_by_Wikimedia_Indonesia'
   }
 ];
 </script>
@@ -177,6 +177,8 @@ const netherlandsPartners = [
             >
               <a 
                 :href="partner.href"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="text-xl font-semibold text-[#006699] hover:text-[#0088cc] transition-colors mb-3 block"
               >
                 {{ partner.name }}
@@ -206,6 +208,8 @@ const netherlandsPartners = [
             >
               <a 
                 :href="partner.href"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="text-xl font-semibold text-[#006699] hover:text-[#0088cc] transition-colors mb-3 block"
               >
                 {{ partner.name }}
@@ -235,6 +239,8 @@ const netherlandsPartners = [
             >
               <a 
                 :href="partner.href"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="text-xl font-semibold text-[#006699] hover:text-[#0088cc] transition-colors mb-3 block"
               >
                 {{ partner.name }}
@@ -249,21 +255,21 @@ const netherlandsPartners = [
     </section>
 
     <section class="py-20 bg-gradient-to-r from-[#006699] to-[#0088cc]">
-            <div class="container mx-auto px-6 lg:px-8">
-                <div class="max-w-4xl mx-auto text-center text-white">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6">
-                        Mari Bekerja Sama
-                    </h2>
-                    <p class="text-lg md:text-xl mb-8 text-white/90">
-                        Apakah institusi Anda ingin membagikan koleksi digital secara terbuka?
-                        Mari berkolaborasi untuk memperkaya pengetahaan Indonesia di dunia digital.
-                    </p>
-                    <a href="/kontak" class="inline-block px-8 py-4 bg-white text-[#006699] rounded-xl font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300">
-                        Hubungi Kami
-                    </a>
-                </div>
-            </div>
-        </section>
+      <div class="container mx-auto px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center text-white">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">
+            Mari Bekerja Sama
+          </h2>
+          <p class="text-lg md:text-xl mb-8 text-white/90">
+            Apakah institusi Anda ingin membagikan koleksi digital secara terbuka?
+            Mari berkolaborasi untuk memperkaya pengetahaan Indonesia di dunia digital.
+          </p>
+          <a href="/kontak" class="inline-block px-8 py-4 bg-white text-[#006699] rounded-xl font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300">
+            Hubungi Kami
+          </a>
+        </div>
+      </div>
+    </section>
 
   </AppLayout>
 </template>

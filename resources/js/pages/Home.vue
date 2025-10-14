@@ -54,7 +54,7 @@ const heroImage = computed(() => {
           </div>
 
           <!-- Right: Content -->
-          <div class="space-y-8 animate-fade-in-delay order-1 lg:order-2">
+          <div class="space-y-6 animate-fade-in-delay order-1 lg:order-2">
             <div class="inline-block">
               <span
                 class="text-sm font-semibold tracking-wider text-[#006699] uppercase px-4 py-2 bg-blue-100 rounded-full">
@@ -68,13 +68,6 @@ const heroImage = computed(() => {
                 Pusparagam Budaya Indonesia ke Dunia
               </span>
             </h1>
-
-            <p class="text-lg md:text-xl text-slate-600 leading-relaxed">
-              <a href="https://wikimedia.or.id" target="_blank" class="text-blue-900 hover:underline">Wikimedia
-                Indonesia</a> dengan proyeknya Wikipedia, Wikimedia Commons, Wikisource,
-              Wikidata dan Lisensi Bebas Creative Commons, turut serta mendukung upaya
-              dokumentasi dan pelestarian budaya Indonesia.
-            </p>
 
             <div class="flex flex-wrap gap-4 pt-2">
               <button @click="scrollToNextSection"
@@ -91,8 +84,48 @@ const heroImage = computed(() => {
       </div>
     </section>
 
-    <!-- Aktivitas Section -->
+    <!-- Tentang Program Section -->
     <section class="py-20 lg:py-28 bg-white">
+      <div class="container mx-auto px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+          <!-- Section Title -->
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
+              <a href="https://wikimedia.or.id" target="_blank" 
+                class="text-[#006699] hover:text-[#0088cc] transition-colors duration-300">
+                Wikimedia Indonesia
+              </a> 
+              dengan proyeknya Wikipedia, Wikimedia Commons, Wikisource, Wikidata dan Lisensi Bebas Creative Commons
+            </h2>
+          </div>
+
+          <!-- Description Paragraphs -->
+          <div class="space-y-6 text-slate-600 text-base md:text-lg leading-relaxed">
+            <p>
+              Program Kebudayaan Wikimedia Indonesia memberikan dukungan terhadap upaya dokumentasi dan pelestarian
+              budaya Indonesia termasuk bekerja sama dengan komunitas, institusi pemerintah, dan lembaga budaya dalam
+              menyediakan akses terbuka pada warisan budaya Indonesia. Akses terbuka pada warisan budaya memungkinkan
+              setiap orang di seluruh dunia untuk menemukan, menggunakan kembali, dan memaknai warisan budaya yang
+              mereka miliki sebagai bagian dari identitas kultural.
+            </p>
+            <p>
+              Melalui proyek-proyek Wikimedia yang tersedia dalam berbagai bahasa, Wikimedia Indonesia membantu
+              institusi membagikan sumber-dayanya kepada dunia melalui kerja sama yang berdampak luas bersama dengan
+              relawan yang berpengalaman. Ini merupakan kesempatan bagi institusi budaya untuk menghadirkan pusparagam
+              budaya Indonesia kepada pengunjung baru lewat platform Wikipedia, Wiktionary, Wikimedia Commons, Wikidata
+              dan Wikisource.
+            </p>
+            <p>
+              Kerjasama yang saling menguntungkan ini memfasilitasi pembagian sumber daya antara lembaga budaya dan
+              Wikimedia sebagai bagian dari kolaborasi berkelanjutan jangka panjang.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Aktivitas Section -->
+    <section class="py-20 lg:py-28 bg-gradient-to-b from-white to-slate-50">
       <div class="container mx-auto px-6 lg:px-8">
         <!-- Section Header -->
         <div class="text-center max-w-3xl mx-auto mb-16">
@@ -179,105 +212,75 @@ const heroImage = computed(() => {
       </div>
     </section>
 
-
-
     <!-- Proyek Section -->
-    <section id="proyek-section" class="py-20 lg:py-28 bg-gradient-to-b from-white to-slate-50">
+    <section id="proyek-section" class="py-20 lg:py-28 bg-white">
       <div class="container mx-auto px-6 lg:px-8">
         <!-- Section Title -->
-        <div class="text-center mb-12">
+        <div class="text-center mb-16">
           <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
             Proyek yang Digunakan
           </h2>
+          <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
+            Platform-platform Wikimedia yang kami gunakan untuk mendokumentasikan dan melestarikan budaya Indonesia
+          </p>
         </div>
 
-        <!-- Content Grid -->
-        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
-          <!-- Left: Description -->
-          <div class="space-y-6 text-slate-600 text-base md:text-lg leading-relaxed">
-            <p>
-              Program Kebudayaan Wikimedia Indonesia memberikan dukungan terhadap upaya dokumentasi dan pelestarian
-              budaya Indonesia termasuk bekerja sama dengan komunitas, institusi pemerintah, dan lembaga budaya dalam
-              menyediakan akses terbuka pada warisan budaya Indonesia. Akses terbuka pada warisan budaya memungkinkan
-              setiap orang di seluruh dunia untuk menemukan, menggunakan kembali, dan memaknai warisan budaya yang
-              mereka miliki sebagai bagian dari identitas kultural.
-            </p>
-            <p>
-              Melalui proyek-proyek Wikimedia yang tersedia dalam berbagai bahasa, Wikimedia Indonesia membantu
-              institusi membagikan sumber-dayanya kepada dunia melalui kerja sama yang berdampak luas bersama dengan
-              relawan yang berpengalaman. Ini merupakan kesempatan bagi institusi budaya untuk menghadirkan pusparagam
-              budaya Indonesia kepada pengunjung baru lewat platform Wikipedia, Wikitionary, Wikimedia Commons, Wikidata
-              dan Wikisource.
-            </p>
-            <p>
-              Kerjasama yang saling menguntungkan ini memfasilitasi pembagian sumber daya antara lembaga budaya dan
-              Wikimedia sebagai bagian dari kolaborasi berkelanjutan jangka panjang.
-            </p>
-          </div>
-
-          <!-- Right: Project Logos -->
+        <!-- Project Logos -->
+        <div class="max-w-5xl mx-auto">
           <div class="relative">
             <!-- Decorative Background -->
             <div
-              class="absolute inset-0 bg-gradient-to-br from-blue-100/50 to-cyan-100/50 rounded-3xl transform rotate-3">
+              class="absolute inset-0 bg-gradient-to-br from-blue-100/50 to-cyan-100/50 rounded-3xl transform rotate-2">
             </div>
 
-            <!-- Right: Project Logos -->
-            <div class="relative">
-              <!-- Decorative Background -->
-              <div
-                class="absolute inset-0 bg-gradient-to-br from-blue-100/50 to-cyan-100/50 rounded-3xl transform rotate-3">
-              </div>
+            <!-- Logos Container -->
+            <div class="relative bg-white rounded-3xl shadow-2xl p-8 md:p-12 lg:p-16">
+              <div class="grid grid-cols-5 gap-6 md:gap-8">
+                <!-- Logo 1 - Wikipedia -->
+                <a href="https://id.wikipedia.org" target="_blank" rel="noopener noreferrer"
+                  class="flex flex-col items-center justify-center p-4 rounded-2xl bg-slate-50 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group cursor-pointer">
+                  <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Wikipedia-logo-v2-wordmark.svg"
+                      alt="Wikipedia" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" />
+                  </div>
+                </a>
 
-              <!-- Logos Container -->
-              <div class="relative bg-white rounded-3xl shadow-xl p-8 lg:p-12">
-                <div class="grid grid-cols-2 gap-8">
-                  <!-- Logo 1 - Wikipedia -->
-                  <a href="https://id.wikipedia.org" target="_blank" rel="noopener noreferrer"
-                    class="flex flex-col items-center justify-center p-6 rounded-2xl bg-slate-50 hover:bg-blue-50 transition-all duration-300 group cursor-pointer">
-                    <div class="w-20 h-28 mb-3 flex items-center justify-center">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Wikipedia-logo-v2-wordmark.svg"
-                        alt="Wikipedia" class="w-full h-full object-contain" />
-                    </div>
-                  </a>
+                <!-- Logo 2 - Wiktionary -->
+                <a href="https://id.wiktionary.org" target="_blank" rel="noopener noreferrer"
+                  class="flex flex-col items-center justify-center p-4 rounded-2xl bg-slate-50 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group cursor-pointer">
+                  <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Wiktionary-logo-id.svg"
+                      alt="Wiktionary" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" />
+                  </div>
+                </a>
 
-                  <!-- Logo 2 - Wiktionary -->
-                  <a href="https://id.wiktionary.org" target="_blank" rel="noopener noreferrer"
-                    class="flex flex-col items-center justify-center p-6 rounded-2xl bg-slate-50 hover:bg-blue-50 transition-all duration-300 group cursor-pointer">
-                    <div class="w-20 h-28 mb-3 flex items-center justify-center">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Wiktionary-logo-id.svg"
-                        alt="Wiktionary" class="w-full h-full object-contain" />
-                    </div>
-                  </a>
+                <!-- Logo 3 - Commons -->
+                <a href="https://commons.wikimedia.org" target="_blank" rel="noopener noreferrer"
+                  class="flex flex-col items-center justify-center p-4 rounded-2xl bg-slate-50 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group cursor-pointer">
+                  <div class="w-20 h-16 md:w-24 md:h-20 flex items-center justify-center">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/9/94/Wikimedia_Commons_logo_Spanish_horizontal_in_colour.svg"
+                      alt="Wikimedia Commons" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" />
+                  </div>
+                </a>
 
-                  <!-- Logo 3 - Commons (Centered) -->
-                  <a href="https://commons.wikimedia.org" target="_blank" rel="noopener noreferrer"
-                    class="flex flex-col items-center justify-center p-6 rounded-2xl bg-slate-50 hover:bg-blue-50 transition-all duration-300 group col-span-2 cursor-pointer">
-                    <div class="w-50 h-28 mb-3 flex items-center justify-center">
-                      <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/9/94/Wikimedia_Commons_logo_Spanish_horizontal_in_colour.svg"
-                        alt="Wikimedia Commons" class="w-full h-full object-contain" />
-                    </div>
-                  </a>
+                <!-- Logo 4 - Wikidata -->
+                <a href="https://www.wikidata.org" target="_blank" rel="noopener noreferrer"
+                  class="flex flex-col items-center justify-center p-4 rounded-2xl bg-slate-50 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group cursor-pointer">
+                  <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Wikidata-Archi38.svg" alt="Wikidata"
+                      class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" />
+                  </div>
+                </a>
 
-                  <!-- Logo 4 - Wikidata -->
-                  <a href="https://www.wikidata.org" target="_blank" rel="noopener noreferrer"
-                    class="flex flex-col items-center justify-center p-6 rounded-2xl bg-slate-50 hover:bg-blue-50 transition-all duration-300 group cursor-pointer">
-                    <div class="w-20 h-28 mb-3 flex items-center justify-center">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Wikidata-Archi38.svg" alt="Wikidata"
-                        class="w-full h-full object-contain" />
-                    </div>
-                  </a>
-
-                  <!-- Logo 5 - Wikisource -->
-                  <a href="https://id.wikisource.org" target="_blank" rel="noopener noreferrer"
-                    class="flex flex-col items-center justify-center p-6 rounded-2xl bg-slate-50 hover:bg-blue-50 transition-all duration-300 group cursor-pointer">
-                    <div class="w-20 h-28 mb-3 flex items-center justify-center">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Wikisource-logo-id.svg"
-                        alt="Wikisource" class="w-full h-full object-contain" />
-                    </div>
-                  </a>
-                </div>
+                <!-- Logo 5 - Wikisource -->
+                <a href="https://id.wikisource.org" target="_blank" rel="noopener noreferrer"
+                  class="flex flex-col items-center justify-center p-4 rounded-2xl bg-slate-50 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group cursor-pointer">
+                  <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Wikisource-logo-id.svg"
+                      alt="Wikisource" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" />
+                  </div>
+                </a>
               </div>
             </div>
           </div>
@@ -285,7 +288,6 @@ const heroImage = computed(() => {
       </div>
     </section>
 
-    <!-- Call to Action Section -->
   </AppLayout>
 </template>
 
