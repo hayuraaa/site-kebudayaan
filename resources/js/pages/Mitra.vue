@@ -248,6 +248,23 @@ const netherlandsPartners = [
       </div>
     </section>
 
+    <section class="py-20 bg-gradient-to-r from-[#006699] to-[#0088cc]">
+            <div class="container mx-auto px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto text-center text-white">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                        Mari Bekerja Sama
+                    </h2>
+                    <p class="text-lg md:text-xl mb-8 text-white/90">
+                        Apakah institusi Anda ingin membagikan koleksi digital secara terbuka?
+                        Mari berkolaborasi untuk memperkaya pengetahaan Indonesia di dunia digital.
+                    </p>
+                    <a href="/kontak" class="inline-block px-8 py-4 bg-white text-[#006699] rounded-xl font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300">
+                        Hubungi Kami
+                    </a>
+                </div>
+            </div>
+        </section>
+
   </AppLayout>
 </template>
 
