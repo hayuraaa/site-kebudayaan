@@ -90,12 +90,13 @@ const heroImage = computed(() => {
         <div class="max-w-6xl mx-auto">
           <!-- Section Title -->
           <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
-              <a href="https://wikimedia.or.id" target="_blank" 
+            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 leading-tight">
+              <a href="https://wikimedia.or.id" target="_blank"
                 class="text-[#006699] hover:text-[#0088cc] transition-colors duration-300">
                 Wikimedia Indonesia
-              </a> 
-              dengan proyeknya Wikipedia, Wikimedia Commons, Wikisource, Wikidata dan Lisensi Bebas Creative Commons
+              </a>
+              dengan proyeknya Wikipedia, Wikimedia Commons, Wikisource, Wikidata dan Lisensi Bebas Creative Commons,
+              turut serta mendukung upaya dokumentasi dan pelestarian budaya Indonesia.
             </h2>
           </div>
 
@@ -241,7 +242,8 @@ const heroImage = computed(() => {
                   class="flex flex-col items-center justify-center p-4 rounded-2xl bg-slate-50 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group cursor-pointer">
                   <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Wikipedia-logo-v2-wordmark.svg"
-                      alt="Wikipedia" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" />
+                      alt="Wikipedia"
+                      class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" />
                   </div>
                 </a>
 
@@ -250,7 +252,8 @@ const heroImage = computed(() => {
                   class="flex flex-col items-center justify-center p-4 rounded-2xl bg-slate-50 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group cursor-pointer">
                   <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Wiktionary-logo-id.svg"
-                      alt="Wiktionary" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" />
+                      alt="Wiktionary"
+                      class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" />
                   </div>
                 </a>
 
@@ -260,7 +263,8 @@ const heroImage = computed(() => {
                   <div class="w-20 h-16 md:w-24 md:h-20 flex items-center justify-center">
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/9/94/Wikimedia_Commons_logo_Spanish_horizontal_in_colour.svg"
-                      alt="Wikimedia Commons" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" />
+                      alt="Wikimedia Commons"
+                      class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" />
                   </div>
                 </a>
 
@@ -278,7 +282,8 @@ const heroImage = computed(() => {
                   class="flex flex-col items-center justify-center p-4 rounded-2xl bg-slate-50 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group cursor-pointer">
                   <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Wikisource-logo-id.svg"
-                      alt="Wikisource" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" />
+                      alt="Wikisource"
+                      class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" />
                   </div>
                 </a>
               </div>
