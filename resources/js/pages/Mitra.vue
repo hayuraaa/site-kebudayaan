@@ -1,0 +1,256 @@
+<script setup>
+import AppLayout from './Layout/AppLayout.vue';
+import { Head, Link } from '@inertiajs/vue3';
+
+const sumatraPartners = [
+  {
+    name: 'Pusat Penelitian Kelapa Sawit, Medan',
+    collection: 'Buku-buku tentang perkebunan dalam bahasa Belanda',
+    href: '#'
+  },
+  {
+    name: 'Koleksi A. Damhoeri, Payakumbuh',
+    collection: 'Karya tulisan sastrawan A. Damhoeri yang dibuka bebas.',
+    href: '#'
+  },
+  {
+    name: 'Balai Bahasa Provinsi Sumatera Barat, Padang',
+    collection: 'Buku-buku terbitan BBPSB dan literasi Minangkabau',
+    href: '#'
+  },
+  {
+    name: 'Museum Uang Sumatera, Medan',
+    collection: 'Uang kertas dan koin kerajaan, ORI dan ORIDA serta token perkebunan',
+    href: '#'
+  },
+  {
+    name: 'Kutub Chanah, Maninjau',
+    collection: 'Koleksi buku dan catatan orang tua Buya HAMKA',
+    href: '#'
+  },
+  {
+    name: 'Pusat Dokumentasi dan Informasi Kebudayaan Minangkabau, Padang Panjang',
+    collection: 'Majalah terbitan Sumatra Barat sebelum kemerdekaan',
+    href: '#'
+  },
+  {
+    name: 'Museum Daerah Deli Serdang, Deli Serdang',
+    collection: 'Sejarah dan Budaya Kabupaten Deli Serdang',
+    href: '#'
+  }
+];
+
+const javaBaliNusaPartners = [
+  {
+    name: 'Perpustakaan Ajip Rosidi, Bandung',
+    collection: 'Majalah berbahasa Sunda, Ensiklopedi dan naskah kuno',
+    href: '#'
+  },
+  {
+    name: 'Yayasan Sastra Lestari, Surakarta',
+    collection: 'Majalah Kajawen yang beraksara jawa',
+    href: '#'
+  },
+  {
+    name: 'Indonesian Visual Art Archive, Yogyakarta',
+    collection: 'Koleksi arsip artikel, video dan audio seni.',
+    href: '#'
+  },
+  {
+    name: 'History of Java Museum, Yogyakarta',
+    collection: 'Koleksi seni dan budaya jawa',
+    href: '#'
+  },
+  {
+    name: 'Museum Tamansiswa Dewantara Kirti Griya, Yogyakarta',
+    collection: 'Surat-surat Ki Hajar Dewantara, Buku dan dokumen lainnya',
+    href: '#'
+  },
+  {
+    name: 'Museum Daerah Dr. (H.C.) Oemboe Hina Kapita, Sumba',
+    collection: 'Keramik pada zaman pra-sejarah',
+    href: '#'
+  },
+  {
+    name: 'Museum Pasifika, Bali',
+    collection: 'Koleksi lukisan Bali dan Internasional',
+    href: '#'
+  },
+  {
+    name: 'Indonesian Heritage Museum, Jawa Timur',
+    collection: 'Koleksi seni dan budaya Indonesia',
+    href: '#'
+  },
+  {
+    name: 'Dinas Penerangan TNI Angkatan Udara, Yogyakarta',
+    collection: 'Foto-foto pesawat tempur dan Alutsisa TNI AU',
+    href: '#'
+  },
+  {
+    name: 'Majalah Horison, Jakarta',
+    collection: 'Majalah sastra Horison',
+    href: '#'
+  },
+  {
+    name: 'Indonesian Islamic Art Museum, Jawa Timur',
+    collection: 'Koleksi seni Islam di Nusantara dan juga dunia',
+    href: '#'
+  }
+];
+
+const netherlandsPartners = [
+  {
+    name: 'Netherlands Institute for Sound and Vision',
+    collection: 'Film propaganda Jepang',
+    href: '#'
+  },
+  {
+    name: 'Nationaal Museum van Wereldculturen',
+    collection: 'Foto-foto dengan tajuk Indonesia pra- dan pascakemerdekaan',
+    href: '#'
+  },
+  {
+    name: 'Koninklijk Instituut voor Taal-, Land- en Volkenkunde (KITLV)',
+    collection: 'Indonesia pra-kemerdekaan Bukittinggi, Batavia dan Yogyakarta',
+    href: '#'
+  }
+];
+</script>
+
+<template>
+  <Head title="Mitra Kami" />
+  <AppLayout>
+    <!-- Hero Section -->
+    <section class="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50/50 to-cyan-50/50">
+      <div class="container mx-auto px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+          <div class="inline-block mb-6">
+            <span class="text-sm font-semibold tracking-wider text-[#006699] uppercase px-4 py-2 bg-blue-100 rounded-full">
+              Kolaborasi GLAM
+            </span>
+          </div>
+          
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
+            <span class="bg-gradient-to-r from-[#006699] to-[#0088cc] bg-clip-text text-transparent">
+              Mitra Kami
+            </span>
+          </h1>
+          
+          <div class="space-y-4 text-lg md:text-xl text-slate-600 leading-relaxed">
+            <p>
+              Halaman ini berisi sebagian daftar proyek kolaborasi GLAM di Indonesia; sebuah panduan untuk memodelkan proyek-proyek GLAM serta mendokumentasikan kolaborasi yang berhasil juga dalam Wikipedia dalam bahasa Indonesia, Wikimedia Commons, Wikidata, dan Wikisource.
+            </p>
+            <p>
+              Halaman ini memuat sebagian daftar proyek kolaborasi Kebudayaan Wikimedia di Indonesia, sekaligus menjadi panduan untuk merancang inisiatif serupa serta mendokumentasikan berbagai kolaborasi yang berhasil. Proyek-proyek tersebut juga berkontribusi dalam pengembangan konten di Wikipedia bahasa Indonesia, Wikimedia Commons, Wikidata, Wikisource.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Image Section -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+          <img 
+            src="/mitra_kebudayaan.png" 
+            alt="Mitra Kebudayaan" 
+            class="w-full h-auto object-cover rounded-2xl shadow-lg"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Sumatera Section -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-12">
+            Sumatera
+          </h2>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <div 
+              v-for="(partner, index) in sumatraPartners" 
+              :key="index"
+              class="bg-slate-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300 border border-slate-200"
+            >
+              <a 
+                :href="partner.href"
+                class="text-xl font-semibold text-[#006699] hover:text-[#0088cc] transition-colors mb-3 block"
+              >
+                {{ partner.name }}
+              </a>
+              <p class="text-slate-600 leading-relaxed">
+                <span class="font-medium">Koleksi:</span> {{ partner.collection }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Jawa, Bali, dan Nusa Tenggara Section -->
+    <section class="py-20 bg-gradient-to-b from-white to-slate-50">
+      <div class="container mx-auto px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-12">
+            Jawa, Bali, dan Nusa Tenggara
+          </h2>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <div 
+              v-for="(partner, index) in javaBaliNusaPartners" 
+              :key="index"
+              class="bg-slate-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300 border border-slate-200"
+            >
+              <a 
+                :href="partner.href"
+                class="text-xl font-semibold text-[#006699] hover:text-[#0088cc] transition-colors mb-3 block"
+              >
+                {{ partner.name }}
+              </a>
+              <p class="text-slate-600 leading-relaxed">
+                <span class="font-medium">Koleksi:</span> {{ partner.collection }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Belanda Section -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-12">
+            Belanda
+          </h2>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <div 
+              v-for="(partner, index) in netherlandsPartners" 
+              :key="index"
+              class="bg-slate-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300 border border-slate-200"
+            >
+              <a 
+                :href="partner.href"
+                class="text-xl font-semibold text-[#006699] hover:text-[#0088cc] transition-colors mb-3 block"
+              >
+                {{ partner.name }}
+              </a>
+              <p class="text-slate-600 leading-relaxed">
+                <span class="font-medium">Koleksi:</span> {{ partner.collection }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </AppLayout>
+</template>
+
+<style scoped>
+/* Additional styles if needed */
+</style>

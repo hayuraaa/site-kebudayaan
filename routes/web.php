@@ -20,6 +20,10 @@ Route::get('/kebijakan-ruang-ramah', function () {
     return Inertia::render('KebijakanRuangRamah');
 })->name('kebijakan-ruang-ramah');
 
+Route::get('/mitra', function () {
+    return Inertia::render('Mitra');
+})->name('mitra');
+
 Route::get('/kontak', function () {
     return Inertia::render('Kontak');
 })->name('kontak');

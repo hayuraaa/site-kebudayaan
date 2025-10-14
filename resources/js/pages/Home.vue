@@ -19,11 +19,11 @@ const scrollToNextSection = () => {
 // Fungsi untuk mendapatkan URL gambar lengkap (sama seperti ModalBanner)
 const getImageUrl = (imagePath) => {
   if (!imagePath) return '';
-  
+
   if (imagePath.startsWith('http')) {
     return imagePath;
   }
-  
+
   return `http://dashboard.wikimedia.or.id/storage/${imagePath}`;
 };
 
@@ -83,13 +83,103 @@ const heroImage = computed(() => {
               </button>
               <Link href="/kontak"
                 class="px-8 py-3.5 border-2 border-[#006699] text-[#006699] rounded-xl font-semibold hover:bg-[#006699] hover:text-white transition-all duration-300">
-                Hubungi Kami
+              Hubungi Kami
               </Link>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Aktivitas Section -->
+    <section class="py-20 lg:py-28 bg-white">
+      <div class="container mx-auto px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+            Aktivitas Kami
+          </h2>
+          <p class="text-lg md:text-xl text-slate-600 leading-relaxed">
+            Berbagai kegiatan yang kami lakukan bertujuan untuk mendukung penyebaran pengetahuan bebas melalui
+            pelatihan, pertemuan komunitas, dan kerja sama dengan berbagai pihak.
+          </p>
+        </div>
+
+        <!-- Activities Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <!-- WikiLatih -->
+          <div
+            class="group bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-lg transition-shadow duration-300">
+            <div class="relative overflow-hidden h-64">
+              <img src="/wikilatih.jpg" alt="WikiLatih"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-slate-900 mb-3">WikiLatih</h3>
+              <p class="text-slate-600 leading-relaxed">
+                WikiLatih ada sebagai program pelatihan penyuntingan dasar di Projek Wikimedia bahasa Indonesia.
+              </p>
+            </div>
+          </div>
+
+          <!-- Kopdar -->
+          <div
+            class="group bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-lg transition-shadow duration-300">
+            <div class="relative overflow-hidden h-64">
+              <img src="/kopdar.jpg" alt="Kopdar"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-slate-900 mb-3">Kopdar</h3>
+              <p class="text-slate-600 leading-relaxed">
+                Kami mendukung komunitas-komunitas Wikimedia di Indonesia menyelenggarakan kegiatan berkumpul untuk
+                menyunting bersama dalam agenda Kopdar.
+              </p>
+            </div>
+          </div>
+
+          <!-- Digitalisasi -->
+          <div
+            class="group bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-lg transition-shadow duration-300">
+            <div class="relative overflow-hidden h-64">
+              <img src="/digitalisasi.jpg" alt="Digitalisasi"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-slate-900 mb-3">Digitalisasi</h3>
+              <p class="text-slate-600 leading-relaxed">
+                Kami bekerja bersama komunitas-komunitas Wikimedia di Indonesia untuk membangun lingkungan digital.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="relative py-20 md:py-28 overflow-hidden">
+      <!-- Background Image -->
+      <div class="absolute inset-0">
+        <img src="/bg-2.png" alt="Background Quote" class="w-full h-full object-cover" />
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-white/80"></div>
+      </div>
+
+      <!-- Quote Content -->
+      <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-8 text-center -mt-8 md:-mt-12">
+        <div class="mb-6">
+          <span class="text-6xl md:text-7xl text-black-400">❝</span>
+        </div>
+        <blockquote class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 italic leading-relaxed">
+          Bayangkan suatu dunia tempat setiap manusia bisa berbagi beragam pengetahuan secara bebas
+        </blockquote>
+      </div>
+    </section>
+
+
 
     <!-- Proyek Section -->
     <section id="proyek-section" class="py-20 lg:py-28 bg-gradient-to-b from-white to-slate-50">
@@ -189,94 +279,6 @@ const heroImage = computed(() => {
                   </a>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Quote Section -->
-    <section class="relative py-20 md:py-28 overflow-hidden">
-      <!-- Background Image -->
-      <div class="absolute inset-0">
-        <img src="/bg-2.png" alt="Background Quote" class="w-full h-full object-cover" />
-        <!-- Overlay -->
-        <div class="absolute inset-0 bg-white/80"></div>
-      </div>
-
-      <!-- Quote Content -->
-      <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-8 text-center -mt-8 md:-mt-12">
-        <div class="mb-6">
-          <span class="text-6xl md:text-7xl text-black-400">❝</span>
-        </div>
-        <blockquote class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 italic leading-relaxed">
-          Bayangkan suatu dunia tempat setiap manusia bisa berbagi beragam pengetahuan secara bebas
-        </blockquote>
-      </div>
-    </section>
-
-    <!-- Aktivitas Section -->
-    <section class="py-20 lg:py-28 bg-white">
-      <div class="container mx-auto px-6 lg:px-8">
-        <!-- Section Header -->
-        <div class="text-center max-w-3xl mx-auto mb-16">
-          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
-            Aktivitas Kami
-          </h2>
-          <p class="text-lg md:text-xl text-slate-600 leading-relaxed">
-            Berbagai kegiatan yang kami lakukan bertujuan untuk mendukung penyebaran pengetahuan bebas melalui
-            pelatihan, pertemuan komunitas, dan kerja sama dengan berbagai pihak.
-          </p>
-        </div>
-
-        <!-- Activities Grid -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          <!-- WikiLatih -->
-          <div
-            class="group bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-lg transition-shadow duration-300">
-            <div class="relative overflow-hidden h-64">
-              <img src="/wikilatih.jpg" alt="WikiLatih"
-                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-2xl font-bold text-slate-900 mb-3">WikiLatih</h3>
-              <p class="text-slate-600 leading-relaxed">
-                WikiLatih ada sebagai program pelatihan penyuntingan dasar di Projek Wikimedia bahasa Indonesia.
-              </p>
-            </div>
-          </div>
-
-          <!-- Kopdar -->
-          <div
-            class="group bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-lg transition-shadow duration-300">
-            <div class="relative overflow-hidden h-64">
-              <img src="/kopdar.jpg" alt="Kopdar"
-                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-2xl font-bold text-slate-900 mb-3">Kopdar</h3>
-              <p class="text-slate-600 leading-relaxed">
-                Kami mendukung komunitas-komunitas Wikimedia di Indonesia menyelenggarakan kegiatan berkumpul untuk
-                menyunting bersama dalam agenda Kopdar.
-              </p>
-            </div>
-          </div>
-
-          <!-- Digitalisasi -->
-          <div
-            class="group bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-lg transition-shadow duration-300">
-            <div class="relative overflow-hidden h-64">
-              <img src="/digitalisasi.jpg" alt="Digitalisasi"
-                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-2xl font-bold text-slate-900 mb-3">Digitalisasi</h3>
-              <p class="text-slate-600 leading-relaxed">
-                Kami bekerja bersama komunitas-komunitas Wikimedia di Indonesia untuk membangun lingkungan digital.
-              </p>
             </div>
           </div>
         </div>

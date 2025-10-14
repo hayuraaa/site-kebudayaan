@@ -18,7 +18,7 @@ const form = useForm({
 const handleSubmit = () => {
     showSuccess.value = false;
     showError.value = false;
-    
+
     form.post('/contact-forms/submit', {
         onSuccess: () => {
             form.reset();
@@ -46,13 +46,7 @@ const handleSubmit = () => {
         <!-- Hero Section -->
         <section class="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50/50 to-cyan-50/50">
             <div class="container mx-auto px-6 lg:px-8">
-                <div class="max-w-4xl mx-auto text-center">
-                    <div class="inline-block mb-6">
-                        <span
-                            class="text-sm font-semibold tracking-wider text-[#006699] uppercase px-4 py-2 bg-blue-100 rounded-full">
-                            Kebudayaan Wikimedia Indonesia
-                        </span>
-                    </div>
+                <div class="max-w-5xl mx-auto text-center">
 
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
                         <span class="bg-gradient-to-r from-[#006699] to-[#0088cc] bg-clip-text text-transparent">
@@ -61,12 +55,74 @@ const handleSubmit = () => {
                     </h1>
 
                     <p class="text-lg md:text-xl text-slate-600 leading-relaxed">
-                        Kami menjangkau orang-orang yang mendukung gerakan Wikimedia, termasuk institusi pendidikan
-                        dan pihak lainnya untuk membantu masyarakat Indonesia terlibat dalam proyek-proyek
-                        Wikimedia. Kami ingin membangun dunia di mana setiap orang memiliki akses dan kesempatan
-                        yang adil ke ilmu pengetahuan, serta agar setiap orang memiliki keterampilan dan informasi
-                        yang mereka perlukan untuk berkembang di era digital.
+                        Kebudayaan Wikimedia Indonesia terbuka untuk bekerja sama dengan institusi yang ada di
+                        Indonesia, baik dari pemerintah, swasta maupun institusi pribadi. Kami menyediakan sumberdaya
+                        manusia dan juga sumber daya teknis yang kami punya guna membantu institusi membuka koleksinya
+                        untuk mendapatkan jangkauan yang lebih luas. <br>Hasil digitalisasi koleksi institusi akan
+                        diunggah dalam bentuk berkas digital di Wikimedia Commons, artikel di Wikipedia, dokumen di
+                        Wikisource, basis data di Wikidata dan menggunakan lisensi bebas Creative Commons.</br>
                     </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bentuk Kerja Sama Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6 lg:px-8">
+                <div class="max-w-7xl mx-auto">
+                    <!-- Section Header -->
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                            Bentuk Kerja Sama
+                        </h2>
+                        <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+                            Kami menawarkan berbagai bentuk kerja sama yang dapat disesuaikan dengan kebutuhan institusi Anda
+                        </p>
+                    </div>
+
+                    <!-- Collaboration Cards -->
+                    <div class="grid md:grid-cols-3 gap-8">
+                        
+                        <!-- Card 1: Digitalisasi Koleksi -->
+                        <div class="bg-gradient-to-br from-slate-50 to-blue-50/30 rounded-2xl p-8 border border-slate-200 hover:shadow-xl transition-shadow duration-300">
+                            <div class="bg-gradient-to-r from-[#006699] to-[#0088cc] w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                                <span class="text-3xl">📚</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-4 leading-tight">
+                                Kerja sama mendigitalisasikan koleksi dan membuka akses institusi Anda
+                            </h3>
+                            <p class="text-slate-600 leading-relaxed">
+                                Wikimedia Indonesia menyediakan sumber daya manusia dan teknis untuk memindai dan memfoto koleksi institusi dan membuka aksesnya untuk publik.
+                            </p>
+                        </div>
+
+                        <!-- Card 2: Membuka Akses Koleksi -->
+                        <div class="bg-gradient-to-br from-slate-50 to-cyan-50/30 rounded-2xl p-8 border border-slate-200 hover:shadow-xl transition-shadow duration-300">
+                            <div class="bg-gradient-to-r from-[#006699] to-[#0088cc] w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                                <span class="text-3xl">🌐</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-4 leading-tight">
+                                Kerja sama membuka akses koleksi institusi Anda ke jangkauan yang lebih luas
+                            </h3>
+                            <p class="text-slate-600 leading-relaxed">
+                                Wikimedia Indonesia memperkenalkan Wikimedia Commons tempat repositori foto, audio dan video dengan lisensi terbuka dimana institusi Anda bebas untuk menempatkan koleksi.
+                            </p>
+                        </div>
+
+                        <!-- Card 3: Pelatihan -->
+                        <div class="bg-gradient-to-br from-slate-50 to-blue-50/30 rounded-2xl p-8 border border-slate-200 hover:shadow-xl transition-shadow duration-300">
+                            <div class="bg-gradient-to-r from-[#006699] to-[#0088cc] w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                                <span class="text-3xl">🎓</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-4 leading-tight">
+                                Kerja sama pelatihan proyek Wikimedia dan pengenalan lisensi bebas Creative Commons dan gerakan GLAM terbuka
+                            </h3>
+                            <p class="text-slate-600 leading-relaxed">
+                                Wikimedia Indonesia memberikan kesempatan kepada komunitas dan lembaga budaya untuk mengenal lebih jauh proyek Wikimedia Commons dan Wikisource, lisensi terbuka dan gerakan GLAM terbuka melalui kegiatan pelatihan.
+                            </p>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </section>
@@ -173,7 +229,7 @@ const handleSubmit = () => {
                                         class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent outline-none transition bg-white"
                                         :class="{ 'border-red-500': form.errors.email }" placeholder="nama@email.com" />
                                     <p v-if="form.errors.email" class="mt-1 text-sm text-red-600">{{ form.errors.email
-                                        }}</p>
+                                    }}</p>
                                 </div>
 
                                 <!-- Phone Field -->
@@ -185,7 +241,7 @@ const handleSubmit = () => {
                                         class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent outline-none transition bg-white"
                                         :class="{ 'border-red-500': form.errors.phone }" placeholder="08xxxxxxxxxx" />
                                     <p v-if="form.errors.phone" class="mt-1 text-sm text-red-600">{{ form.errors.phone
-                                        }}</p>
+                                    }}</p>
                                 </div>
 
                                 <!-- Subject Field -->
