@@ -6,9 +6,9 @@
 
         <title inertia>{{ config('app.name', 'Kebudayaan Wikimedia Indonesia') }}</title>
 
-        <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/8/8d/Logo_Kebudayaan_WMID.svg" sizes="any">
-        <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/8/8d/Logo_Kebudayaan_WMID.svg" type="image/svg+xml">
-        <link rel="apple-touch-icon" href="https://upload.wikimedia.org/wikipedia/commons/8/8d/Logo_Kebudayaan_WMID.svg">
+        <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/7/78/Ikon_Kebudayaan_WMID.svg" sizes="any">
+        <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/7/78/Ikon_Kebudayaan_WMID.svg" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="https://upload.wikimedia.org/wikipedia/commons/7/78/Ikon_Kebudayaan_WMID.svg">
 
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">

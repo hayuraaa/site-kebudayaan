@@ -138,10 +138,7 @@ const netherlandsPartners = [
           
           <div class="space-y-4 text-lg md:text-xl text-slate-600 leading-relaxed">
             <p>
-              Halaman ini berisi sebagian daftar proyek kolaborasi GLAM di Indonesia; sebuah panduan untuk memodelkan proyek-proyek GLAM serta mendokumentasikan kolaborasi yang berhasil juga dalam Wikipedia dalam bahasa Indonesia, Wikimedia Commons, Wikidata, dan Wikisource.
-            </p>
-            <p>
-              Halaman ini memuat sebagian daftar proyek kolaborasi Kebudayaan Wikimedia di Indonesia, sekaligus menjadi panduan untuk merancang inisiatif serupa serta mendokumentasikan berbagai kolaborasi yang berhasil. Proyek-proyek tersebut juga berkontribusi dalam pengembangan konten di Wikipedia bahasa Indonesia, Wikimedia Commons, Wikidata, Wikisource.
+              Halaman ini berisi sebagian daftar kolaborasi antara lembaga budaya di Indonesia dengan Wikimedia Indonesia. Daftar ini dapat menjadi inspirasi bagi lembaga budaya untuk merancang inisiatif serupa sekaligus mendokumentasikan berbagai kolaborasi yang berhasil. Proyek-proyek tersebut juga berkontribusi dalam pengembangan konten di Wikimedia Commons, Wikipedia bahasa Indonesia, Wikidata, dan Wikisource.
             </p>
           </div>
         </div>

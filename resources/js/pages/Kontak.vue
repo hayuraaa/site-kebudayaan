@@ -76,49 +76,61 @@ const handleSubmit = () => {
                             Bentuk Kerja Sama
                         </h2>
                         <p class="text-lg text-slate-600 max-w-3xl mx-auto">
-                            Kami menawarkan berbagai bentuk kerja sama yang dapat disesuaikan dengan kebutuhan institusi Anda
+                            Kami menawarkan berbagai bentuk kerja sama yang dapat disesuaikan dengan kebutuhan institusi
+                            Anda
                         </p>
                     </div>
 
                     <!-- Collaboration Cards -->
                     <div class="grid md:grid-cols-3 gap-8">
-                        
+
                         <!-- Card 1: Digitalisasi Koleksi -->
-                        <div class="bg-gradient-to-br from-slate-50 to-blue-50/30 rounded-2xl p-8 border border-slate-200 hover:shadow-xl transition-shadow duration-300">
-                            <div class="bg-gradient-to-r from-[#006699] to-[#0088cc] w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                        <div
+                            class="bg-gradient-to-br from-slate-50 to-blue-50/30 rounded-2xl p-8 border border-slate-200 hover:shadow-xl transition-shadow duration-300">
+                            <div
+                                class="bg-gradient-to-r from-[#006699] to-[#0088cc] w-16 h-16 rounded-xl flex items-center justify-center mb-6">
                                 <span class="text-3xl">📚</span>
                             </div>
                             <h3 class="text-xl font-bold text-slate-900 mb-4 leading-tight">
                                 Kerja sama mendigitalisasikan koleksi dan membuka akses institusi Anda
                             </h3>
                             <p class="text-slate-600 leading-relaxed">
-                                Wikimedia Indonesia menyediakan sumber daya manusia dan teknis untuk memindai dan memfoto koleksi institusi dan membuka aksesnya untuk publik.
+                                Wikimedia Indonesia menyediakan sumber daya manusia dan teknis untuk memindai dan
+                                memfoto koleksi institusi dan membuka aksesnya untuk publik.
                             </p>
                         </div>
 
                         <!-- Card 2: Membuka Akses Koleksi -->
-                        <div class="bg-gradient-to-br from-slate-50 to-cyan-50/30 rounded-2xl p-8 border border-slate-200 hover:shadow-xl transition-shadow duration-300">
-                            <div class="bg-gradient-to-r from-[#006699] to-[#0088cc] w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                        <div
+                            class="bg-gradient-to-br from-slate-50 to-cyan-50/30 rounded-2xl p-8 border border-slate-200 hover:shadow-xl transition-shadow duration-300">
+                            <div
+                                class="bg-gradient-to-r from-[#006699] to-[#0088cc] w-16 h-16 rounded-xl flex items-center justify-center mb-6">
                                 <span class="text-3xl">🌐</span>
                             </div>
                             <h3 class="text-xl font-bold text-slate-900 mb-4 leading-tight">
                                 Kerja sama membuka akses koleksi institusi Anda ke jangkauan yang lebih luas
                             </h3>
                             <p class="text-slate-600 leading-relaxed">
-                                Wikimedia Indonesia memperkenalkan Wikimedia Commons tempat repositori foto, audio dan video dengan lisensi terbuka dimana institusi Anda bebas untuk menempatkan koleksi.
+                                Wikimedia Indonesia memperkenalkan Wikimedia Commons tempat repositori foto, audio dan
+                                video dengan lisensi terbuka dimana institusi Anda bebas untuk menempatkan koleksi.
                             </p>
                         </div>
 
                         <!-- Card 3: Pelatihan -->
-                        <div class="bg-gradient-to-br from-slate-50 to-blue-50/30 rounded-2xl p-8 border border-slate-200 hover:shadow-xl transition-shadow duration-300">
-                            <div class="bg-gradient-to-r from-[#006699] to-[#0088cc] w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                        <div
+                            class="bg-gradient-to-br from-slate-50 to-blue-50/30 rounded-2xl p-8 border border-slate-200 hover:shadow-xl transition-shadow duration-300">
+                            <div
+                                class="bg-gradient-to-r from-[#006699] to-[#0088cc] w-16 h-16 rounded-xl flex items-center justify-center mb-6">
                                 <span class="text-3xl">🎓</span>
                             </div>
                             <h3 class="text-xl font-bold text-slate-900 mb-4 leading-tight">
-                                Kerja sama pelatihan proyek Wikimedia dan pengenalan lisensi bebas Creative Commons dan gerakan GLAM terbuka
+                                Kerja sama pelatihan proyek Wikimedia dan pengenalan lisensi bebas Creative Commons dan
+                                gerakan GLAM terbuka
                             </h3>
                             <p class="text-slate-600 leading-relaxed">
-                                Wikimedia Indonesia memberikan kesempatan kepada komunitas dan lembaga budaya untuk mengenal lebih jauh proyek Wikimedia Commons dan Wikisource, lisensi terbuka dan gerakan GLAM terbuka melalui kegiatan pelatihan.
+                                Wikimedia Indonesia memberikan kesempatan kepada komunitas dan lembaga budaya untuk
+                                mengenal lebih jauh proyek Wikimedia Commons dan Wikisource, lisensi terbuka dan gerakan
+                                GLAM terbuka melalui kegiatan pelatihan.
                             </p>
                         </div>
 
@@ -290,15 +302,15 @@ const handleSubmit = () => {
         <!-- Additional Info Section -->
         <section class="py-20 bg-white">
             <div class="container mx-auto px-6 lg:px-8">
-                <div class="max-w-7xl mx-auto">
-                    <div class="bg-gradient-to-r from-[#006699] to-[#0088cc] rounded-3xl p-8 md:p-12 shadow-xl">
-                        <div class="grid md:grid-cols-3 gap-12 text-white">
+                <div class="max-w-5xl mx-auto">
+                    <div class="bg-gradient-to-r from-[#006699] to-[#0088cc] rounded-3xl p-12 md:p-16 shadow-xl">
+                        <div class="grid md:grid-cols-2 gap-16 text-white">
 
                             <!-- Alamat -->
                             <div class="text-center">
-                                <div class="text-5xl mb-4">📍</div>
-                                <h3 class="font-bold text-xl mb-4">Alamat</h3>
-                                <p class="leading-relaxed">
+                                <div class="text-6xl mb-6">📍</div>
+                                <h3 class="font-bold text-2xl mb-6">Alamat</h3>
+                                <p class="text-lg leading-relaxed opacity-95">
                                     TCC Batavia Tower One, Lt. 6<br>
                                     Jalan K.H. Mas Mansyur No. 12<br>
                                     Karet Tengsin, Tanah Abang<br>
@@ -309,22 +321,10 @@ const handleSubmit = () => {
 
                             <!-- Alamat Surel -->
                             <div class="text-center">
-                                <div class="text-5xl mb-4">✉️</div>
-                                <h3 class="font-bold text-xl mb-4">Alamat Surel</h3>
-                                <p class="leading-relaxed">
+                                <div class="text-6xl mb-6">✉️</div>
+                                <h3 class="font-bold text-2xl mb-6">Alamat Surel</h3>
+                                <p class="text-lg leading-relaxed opacity-95">
                                     kebudayaan@wikimedia.or.id
-                                </p>
-                            </div>
-
-                            <!-- Tim Kebudayaan -->
-                            <div class="text-center">
-                                <div class="text-5xl mb-4">👥</div>
-                                <h3 class="font-bold text-xl mb-4">Tim Kebudayaan</h3>
-                                <p class="leading-relaxed">
-                                    <strong>Rahmawati Nur Azizah</strong>
-                                    (Staf Kemitraan Kebudayaan)<br>
-                                    <strong>Ghina Farahtika</strong>
-                                    (Staf Komunikasi Kebudayaan)
                                 </p>
                             </div>
 

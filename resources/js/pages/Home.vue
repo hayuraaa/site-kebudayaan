@@ -45,16 +45,16 @@ const heroImage = computed(() => {
       <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/50 to-cyan-50/50" />
 
       <div class="container mx-auto px-6 lg:px-8 py-20 relative z-10">
-        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <!-- Left: Visual -->
+        <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <!-- Left: Visual - 70% width -->
           <div
-            class="relative lg:h-[550px] h-[400px] rounded-3xl overflow-hidden shadow-2xl animate-fade-in order-2 lg:order-1">
+            class="lg:col-span-7 relative lg:h-[550px] h-[400px] rounded-3xl overflow-hidden shadow-2xl animate-fade-in order-2 lg:order-1">
             <img :src="heroImage" alt="Kebudayaan Indonesia" class="w-full h-full object-cover" />
             <div class="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent" />
           </div>
 
-          <!-- Right: Content -->
-          <div class="space-y-6 animate-fade-in-delay order-1 lg:order-2">
+          <!-- Right: Content - 30% width -->
+          <div class="lg:col-span-5 space-y-6 animate-fade-in-delay order-1 lg:order-2">
             <div class="inline-block">
               <span
                 class="text-sm font-semibold tracking-wider text-[#006699] uppercase px-4 py-2 bg-blue-100 rounded-full">
@@ -64,21 +64,13 @@ const heroImage = computed(() => {
 
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
               Memperkenalkan
-              <span class="block mt-2 bg-gradient-to-r from-[#006699] to-[#0088cc] bg-clip-text text-transparent">
-                Pusparagam Budaya Indonesia ke Dunia
+              <span class="block mt-2">
+                <span class="bg-gradient-to-r from-[#006699] to-[#0088cc] bg-clip-text text-transparent">
+                  Pusparagam Budaya Indonesia
+                </span>
+                <span class="text-slate-900"> ke Dunia</span>
               </span>
             </h1>
-
-            <div class="flex flex-wrap gap-4 pt-2">
-              <button @click="scrollToNextSection"
-                class="px-8 py-3.5 bg-gradient-to-r from-[#006699] to-[#0088cc] text-white rounded-xl font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300">
-                Selengkapnya
-              </button>
-              <Link href="/kontak"
-                class="px-8 py-3.5 border-2 border-[#006699] text-[#006699] rounded-xl font-semibold hover:bg-[#006699] hover:text-white transition-all duration-300">
-              Hubungi Kami
-              </Link>
-            </div>
           </div>
         </div>
       </div>
@@ -195,14 +187,11 @@ const heroImage = computed(() => {
 
     <!-- Quote Section -->
     <section class="relative py-20 md:py-28 overflow-hidden">
-      <!-- Background Image -->
       <div class="absolute inset-0">
-        <img src="/bg-2.png" alt="Background Quote" class="w-full h-full object-cover" />
-        <!-- Overlay -->
+        <img src="/bg-1.jpg" alt="Background Quote" class="w-full h-full object-cover" />
         <div class="absolute inset-0 bg-white/80"></div>
       </div>
 
-      <!-- Quote Content -->
       <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-8 text-center -mt-8 md:-mt-12">
         <div class="mb-6">
           <span class="text-6xl md:text-7xl text-black-400">❝</span>
@@ -211,7 +200,7 @@ const heroImage = computed(() => {
           Bayangkan suatu dunia tempat setiap manusia bisa berbagi beragam pengetahuan secara bebas
         </blockquote>
       </div>
-    </section>
+    </section>  
 
     <!-- Proyek Section -->
     <section id="proyek-section" class="py-20 lg:py-28 bg-white">

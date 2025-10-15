@@ -11,10 +11,10 @@ const page = usePage();
 const navigation = [
   { name: 'Beranda', href: '/' },
   { name: 'GLAM Terbuka', href: '/glam-terbuka' },
-  { name: 'Kegiatan', href: '/kegiatan' },
   { name: 'Mitra', href: '/mitra' },
-  { name: 'Kebijakan Ruang Ramah', href: '/kebijakan-ruang-ramah' },
   { name: 'Media', href: '/media' },
+  { name: 'Kegiatan', href: '/kegiatan' },
+  { name: 'Kebijakan Ruang Ramah', href: '/kebijakan-ruang-ramah' },
   { name: 'Kontak', href: '/kontak' },
 ];
 
@@ -148,15 +148,16 @@ const isSubmenuActive = (submenu) => {
     </main>
 
     <!-- Footer -->
+    <!-- Footer -->
     <footer class="bg-gray-100 border-t border-gray-200 py-16 mt-10">
       <div class="container mx-auto px-6 lg:px-8">
-        <div class="grid grid-cols-12 gap-8 mb-12">
-          <!-- Logo dan Deskripsi - 4 kolom -->
-          <div class="col-span-12 md:col-span-4">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
+          <!-- Logo dan Deskripsi - 5 kolom -->
+          <div class="col-span-12 md:col-span-5">
             <!-- Container untuk kedua logo -->
             <div class="flex items-center gap-4 mb-6">
               <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Logo_Kebudayaan_WMID.svg"
-                alt="Data & Teknologi Wikimedia Indonesia" class="h-24 w-auto" />
+                alt="Kebudayaan Wikimedia Indonesia" class="h-24 w-auto" />
               <a href="https://wikimedia.or.id" target="_blank" rel="noopener noreferrer"
                 class="transition-transform hover:scale-105">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Wikimedia-logo-id.svg"
@@ -166,21 +167,12 @@ const isSubmenuActive = (submenu) => {
 
             <p class="text-gray-700 leading-relaxed">
               Program Kebudayaan <a href="https://wikimedia.or.id" target="_blank"
-                class="text-blue-600 hover:underline">Wikimedia Indonesia</a> berfokus pada dokumentasi dan pelestarian
-              budaya Indonesia melalui platform terbuka, dengan mendorong partisipasi masyarakat dan kolaborasi lembaga
-              budaya dalam digitalisasi koleksi, penulisan konten budaya daerah, serta kampanye kesadaran budaya lewat
-              proyek Wikimedia.
+                class="text-blue-600 hover:underline">Wikimedia Indonesia</a> mendukung upaya dokumentasi dan
+              pelestarian budaya Indonesia melalui proyek Wikimedia.
             </p>
+
             <!-- Social Media Icons -->
             <div class="flex gap-4 mt-6">
-              <!-- <a href="https://web.facebook.com/wikimedia.indonesia"
-                class="w-10 h-10 rounded-lg bg-gray-800 hover:bg-gray-700 text-white flex items-center justify-center transition-colors"
-                aria-label="Facebook">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                </svg>
-              </a> -->
               <a href="https://x.com/Kebudayaan_wmid"
                 class="w-10 h-10 rounded-lg bg-gray-800 hover:bg-gray-700 text-white flex items-center justify-center transition-colors"
                 aria-label="Twitter/X">
@@ -208,47 +200,34 @@ const isSubmenuActive = (submenu) => {
             </div>
           </div>
 
-          <!-- Site Menu - 2 kolom -->
-          <div class="col-span-6 md:col-span-2">
-            <h4 class="font-semibold mb-4 text-gray-900">Site Menu</h4>
+          <!-- Site Menu - 3 kolom -->
+          <div class="col-span-12 md:col-span-3">
+            <h4 class="font-semibold mb-4 text-gray-900">Menu</h4>
             <ul class="space-y-2.5">
               <li>
-                <Link href="/glam-tebuka" class="text-gray-700 hover:text-gray-900 transition-colors">
-                GLAM Terbuka</Link>
+                <Link href="/glam-terbuka" class="text-gray-700 hover:text-gray-900 transition-colors">
+                GLAM Terbuka
+                </Link>
               </li>
               <li>
-                <Link href="/kegiatan" class="text-gray-700 hover:text-gray-900 transition-colors">Kegiatan</Link>
+                <Link href="/mitra" class="text-gray-700 hover:text-gray-900 transition-colors">
+                Mitra
+                </Link>
               </li>
               <li>
-                <Link href="/media" class="text-gray-700 hover:text-gray-900 transition-colors">Media</Link>
+                <Link href="/media" class="text-gray-700 hover:text-gray-900 transition-colors">
+                Media
+                </Link>
               </li>
               <li>
                 <Link href="/kebijakan-ruang-ramah" class="text-gray-700 hover:text-gray-900 transition-colors">
-                Kebijakan
-                Ruang Ramah</Link>
+                Kebijakan Ruang Ramah
+                </Link>
               </li>
               <li>
-                <Link href="/kontak" class="text-gray-700 hover:text-gray-900 transition-colors">Kontak</Link>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Proyek - 2 kolom -->
-          <div class="col-span-6 md:col-span-2">
-            <h4 class="font-semibold mb-4 text-gray-900">Kegiatan</h4>
-            <ul class="space-y-2.5">
-              <li><a href="https://meta.wikimedia.org/wiki/Wikimedia_Indonesia/Bulan_Wiki_GLAM_2025/Bincang_GLAM" target="_blank" class="text-gray-700 hover:text-gray-900 transition-colors">Bincang
-                  Komunitas</a></li>
-              <li><a href="https://meta.wikimedia.org/wiki/Wikimedia_Indonesia/Dana_Wiki" target="_blank" class="text-gray-700 hover:text-gray-900 transition-colors">Dana Wiki</a>
-              </li>
-              <li><a href="https://meta.wikimedia.org/wiki/Wikimedia_Indonesia/Hibah_Buku" target="_blank" class="text-gray-700 hover:text-gray-900 transition-colors">Hibah Buku</a>
-              </li>
-              <li><a href="https://meta.wikimedia.org/wiki/WikiNusantara" target="_blank" class="text-gray-700 hover:text-gray-900 transition-colors">Konferensi
-                  WikiNusantara</a></li>
-              <li><a href="https://wikimedia.or.id/proyek/
-                
-                " target="_blank"
-                  class="text-gray-700 hover:text-gray-900 transition-colors">Penjangkauan</a>
+                <Link href="/kontak" class="text-gray-700 hover:text-gray-900 transition-colors">
+                Kontak
+                </Link>
               </li>
             </ul>
           </div>
@@ -256,21 +235,23 @@ const isSubmenuActive = (submenu) => {
           <!-- Alamat - 4 kolom -->
           <div class="col-span-12 md:col-span-4">
             <h4 class="font-semibold mb-4 text-gray-900">Alamat</h4>
-            <div class="text-gray-700 space-y-1">
+            <div class="text-gray-700 space-y-1 leading-relaxed">
               <p class="font-medium">Wikimedia Indonesia</p>
               <p class="mt-3">TCC Batavia Tower One, Lt. 6</p>
-              <p>Jalan K.H. Mas Mansyur No. 12 Karet Tengsin, Tanah Abang</p>
-              <p>Jakarta Pusat 10220 Indonesia</p>
+              <p>Jalan K.H. Mas Mansyur No. 12</p>
+              <p>Karet Tengsin, Tanah Abang</p>
+              <p>Jakarta Pusat 10220</p>
+              <p>Indonesia</p>
             </div>
           </div>
         </div>
 
         <!-- Copyright -->
         <div class="pt-8 border-t border-gray-300 text-center text-sm text-gray-600">
-          <p>Copyright © 2025 - Lisensi dalam situs ini termasuk tulisan dan gambar merupakan CC-BY-SA 4.0, kecuali
-            dinyatakan berbeda.</p>
+          <p>Lisensi dalam situs ini termasuk tulisan dan gambar merupakan CC-BY-SA 4.0, kecuali dinyatakan berbeda.
+          </p>
         </div>
-    <ScrollToTop />
+        <ScrollToTop />
       </div>
     </footer>
   </div>
