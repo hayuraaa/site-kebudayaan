@@ -60,7 +60,7 @@ class RefreshGlamCache extends Command
                                     schema:isPartOf <https://id.wikipedia.org/>.}
             }
             GROUP BY ?museum ?museumLabel ?sitelink
-            LIMIT 100
+            
         SPARQL;
 
         $this->info('📡 Connecting to Wikidata SPARQL endpoint...');
