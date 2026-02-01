@@ -184,7 +184,7 @@ import { Head, Link } from '@inertiajs/vue3';
                         Tertarik Ikut Kegiatan Kami?
                     </h2>
                     <p class="text-lg md:text-xl mb-8 text-white/90">
-                        Bergabunglah dengan komunitas Wikimedia Indonesia dan ikuti berbagai kegiatan menarik kami untuk
+                        Bergabunglah dengan komunitas Wikimedia di Indonesia dan ikuti berbagai kegiatan menarik kami untuk
                         berkontribusi pada pelestarian budaya Indonesia.
                     </p>
                     <Link href="/kontak"

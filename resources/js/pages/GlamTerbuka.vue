@@ -547,7 +547,7 @@ const groupedLocations = props.glamLocations.reduce((acc, location) => {
                                     dan melaksanakan tantangan dan kompetisi yang mempromosikan pengembangan artikel.
                                 </p>
                                 <p>
-                                    Kerjasama yang saling menguntungkan ini memfasilitasi pembagian sumber daya antara
+                                    Kerja sama yang saling menguntungkan ini memfasilitasi pembagian sumber daya antara
                                     GLAM dan Wikimedia sebagai bagian dari kolaborasi berkelanjutan jangka panjang.
                                 </p>
                             </div>
@@ -565,7 +565,7 @@ const groupedLocations = props.glamLocations.reduce((acc, location) => {
                     </h2>
                     <p class="text-lg md:text-xl mb-8 text-white/90">
                         Apakah institusi Anda ingin membagikan koleksi digital secara terbuka?
-                        Mari berkolaborasi untuk memperkaya pengetahaan Indonesia di dunia digital.
+                        Mari berkolaborasi untuk memperkaya pengetahuan Indonesia di dunia digital.
                     </p>
                     <a href="/kontak" class="inline-block px-8 py-4 bg-white text-[#006699] rounded-xl font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300">
                         Hubungi Kami

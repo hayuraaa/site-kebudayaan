@@ -23,7 +23,7 @@ import { Head } from '@inertiajs/vue3';
           </h1>
           
           <p class="text-lg md:text-xl text-slate-600 leading-relaxed">
-            Komunitas Wikimedia berdedikasi untuk memberikan pengalaman yang ramah bagi semua orang, tanpa memandang jenis kelamin, orientasi seksual, identitas gender atau ekspresi, disabilitas, penampilan, ras, agama, atau pilihan lisensi bebas (dan tidak terbatas pada aspek-aspek tersebut).
+            Kebijakan ruang ramah acara adalah panduan untuk pertemuan komunitas Wikimedia yang semua peserta diharapkan dapat memberikan pengalaman yang positif dan suasana yang saling mendukung bagi semua peserta dalam acara Wikimedia Indonesia.
           </p>
         </div>
       </div>
@@ -38,14 +38,11 @@ import { Head } from '@inertiajs/vue3';
             <!-- Left Column - Text Content -->
             <div>
               <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-                Panduan Pertemuan Komunitas
+                Panduan umum kebijakan ruang yang ramah untuk seluruh acara-acara yang diselenggarakan oleh Wikimedia Indonesia
               </h2>
               <div class="space-y-4 text-slate-600 text-base leading-relaxed">
                 <p>
-                  Kebijakan ruang ramah acara adalah panduan pertemuan komunitas Wikimedia untuk mendorong terciptanya pengalaman yang positif dan membangun bagi seluruh peserta. Komunitas Wikimedia berdedikasi untuk memberikan pengalaman yang ramah bagi semua orang, tanpa memandang jenis kelamin, orientasi seksual, identitas gender atau ekspresi, disabilitas, penampilan, ras, agama, atau pilihan lisensi bebas (dan tidak terbatas pada aspek-aspek tersebut).
-                </p>
-                <p>
-                  Kami tidak memberikan toleransi atas pelecehan yang terjadi di acara yang diselenggarakan oleh Wikimedia Indonesia. Siapa pun yang melanggar peraturan ini dapat diminta untuk meninggalkan acara tersebut.
+                  Wikimedia Indonesia berdedikasi untuk memberikan pengalaman yang ramah bagi semua orang, tanpa memandang jenis kelamin, orientasi seksual, identitas gender atau ekspresi, disabilitas, penampilan, ras, agama, atau pilihan lisensi bebas (dan tidak terbatas pada aspek-aspek tersebut). Kami tidak memberikan toleransi atas pelecehan yang terjadi pada peserta acara-acara yang diselenggarakan oleh Wikimedia Indonesia. Siapa pun yang melanggar peraturan ini dapat diminta untuk meninggalkan acara tersebut.
                 </p>
               </div>
             </div>
@@ -169,11 +166,16 @@ import { Head } from '@inertiajs/vue3';
             
             <div class="space-y-6 text-white text-base md:text-lg leading-relaxed">
               <p>
-                Acara komunitas Wikimedia dikelola oleh sukarelawan dan/atau staf Wikimedia Indonesia, penyelenggara acara juga mengharapkan bantuan dan dukungan dari semua peserta dalam mempertahankan kebijakan ruang ramah acara ini. Jika Anda mengalami pelecehan, melihat orang lain mengalami pelecehan, atau memiliki masalah lain, segera hubungi panitia.
+                Karena acara komunitas Wikimedia dikelola oleh sukarelawan dan/atau staf Wikimedia Indonesia, penyelenggara acara juga mengharapkan bantuan dan dukungan dari semua peserta dalam mempertahankan kebijakan ruang ramah acara ini. Jika Anda mengalami tindakan pelecehan, atau Anda melihat orang lain yang mengalami tindakan pelecehan, atau memiliki masalah lain, segera hubungi penyelenggara acara.
               </p>
-
               <p>
-                Jika panitia khawatir akan perilaku seseorang atau menerima keluhan dari peserta, panitia akan mengambil tindakan yang sesuai dengan situasi pada saat itu. Tindakan tersebut dapat berupa peringatan secara personal maupun meminta orang yang bersangkutan untuk meninggalkan tempat acara. Panitia dengan senang hati membantu peserta untuk menghubungi pihak keamanan tempat acara atau penegak hukum setempat, memberikan pendampingan, atau membantu orang-orang yang mengalami pelecehan agar merasa aman selama acara berlangsung.
+                Jika panitia khawatir akan perilaku seseorang, atau menerima keluhan dari peserta acara, panitia mungkin akan mengambil tindakan yang sesuai dengan situasi pada saat itu. Hal ini dapat berupa peringatan secara personal kepada orang yang bersangkutan; atau dalam kasus yang lebih serius, panitia acara mungkin perlu meminta orang tersebut untuk meninggalkan tempat acara.
+              </p>
+              <p>
+                Panitia penyelenggara acara dengan senang hati membantu peserta untuk memberikan pendamping, atau membantu orang-orang yang mengalami pelecehan agar merasa aman selama acara berlangsung.
+              </p>
+              <p>
+                Individu dengan pola perilaku melecehkan atau yang mengancam akan melecehkan individu lain atau berpotensi mengganggu acara, mereka dapat diminta untuk tidak hadir dalam acara tersebut. Penyelenggara acara dapat mengambil langkah-langkah terlebih dahulu untuk mengecualikan individu dari acara, di mana ada keyakinan bahwa kehadiran peserta tersebut akan melakukan pelecehan atau menimbulkan "efek membahayakan" bagi peserta lainnya.
               </p>
             </div>
           </div>

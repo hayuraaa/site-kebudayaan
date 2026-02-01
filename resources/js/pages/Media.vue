@@ -181,7 +181,7 @@ const canShowPreview = (media) => {
                     <!-- Section Header -->
                     <div class="text-center mb-12">
                         <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
-                            Tonton Juga Video Aktivitas
+                            Tonton Juga Video Kegiatan
                             <span
                                 class="block mt-2 bg-gradient-to-r from-[#006699] to-[#0088cc] bg-clip-text text-transparent">
                                 GLAM Indonesia

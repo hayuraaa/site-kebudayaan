@@ -56,7 +56,7 @@ const handleSubmit = () => {
 
                     <p class="text-lg md:text-xl text-slate-600 leading-relaxed">
                         Kebudayaan Wikimedia Indonesia terbuka untuk bekerja sama dengan institusi yang ada di
-                        Indonesia, baik dari pemerintah, swasta maupun institusi pribadi. Kami menyediakan sumberdaya
+                        Indonesia, baik dari pemerintah, swasta maupun institusi pribadi. Kami menyediakan sumber daya
                         manusia dan juga sumber daya teknis yang kami punya guna membantu institusi membuka koleksinya
                         untuk mendapatkan jangkauan yang lebih luas. <br>Hasil digitalisasi koleksi institusi akan
                         diunggah dalam bentuk berkas digital di Wikimedia Commons, artikel di Wikipedia, dokumen di
@@ -299,36 +299,17 @@ const handleSubmit = () => {
             </div>
         </section>
 
-        <!-- Additional Info Section -->
-        <section class="py-20 bg-white">
+        <!-- Contact Info Section -->
+        <section class="py-16 bg-gradient-to-br from-slate-50 via-blue-50/50 to-cyan-50/50">
             <div class="container mx-auto px-6 lg:px-8">
-                <div class="max-w-5xl mx-auto">
-                    <div class="bg-gradient-to-r from-[#006699] to-[#0088cc] rounded-3xl p-12 md:p-16 shadow-xl">
-                        <div class="grid md:grid-cols-2 gap-16 text-white">
-
-                            <!-- Alamat -->
-                            <div class="text-center">
-                                <div class="text-6xl mb-6">📍</div>
-                                <h3 class="font-bold text-2xl mb-6">Alamat</h3>
-                                <p class="text-lg leading-relaxed opacity-95">
-                                    TCC Batavia Tower One, Lt. 6<br>
-                                    Jalan K.H. Mas Mansyur No. 12<br>
-                                    Karet Tengsin, Tanah Abang<br>
-                                    Jakarta Pusat 10220<br>
-                                    Indonesia
-                                </p>
-                            </div>
-
-                            <!-- Alamat Surel -->
-                            <div class="text-center">
-                                <div class="text-6xl mb-6">✉️</div>
-                                <h3 class="font-bold text-2xl mb-6">Alamat Surel</h3>
-                                <p class="text-lg leading-relaxed opacity-95">
-                                    kebudayaan@wikimedia.or.id
-                                </p>
-                            </div>
-
-                        </div>
+                <div class="max-w-2xl mx-auto">
+                    <div class="bg-gradient-to-r from-[#006699] to-[#0088cc] rounded-2xl p-10 shadow-xl text-center">
+                        <div class="text-6xl mb-4">✉️</div>
+                        <h3 class="font-bold text-2xl text-white mb-3">Hubungi Kami</h3>
+                        <a href="mailto:kebudayaan@wikimedia.or.id" 
+                           class="text-xl text-white hover:text-blue-100 transition-colors duration-200 font-medium">
+                            kebudayaan@wikimedia.or.id
+                        </a>
                     </div>
                 </div>
             </div>

@@ -109,7 +109,7 @@ const heroImage = computed(() => {
               dan Wikisource.
             </p>
             <p>
-              Kerjasama yang saling menguntungkan ini memfasilitasi pembagian sumber daya antara lembaga budaya dan
+              Kerja sama yang saling menguntungkan ini memfasilitasi pembagian sumber daya antara lembaga budaya dan
               Wikimedia sebagai bagian dari kolaborasi berkelanjutan jangka panjang.
             </p>
           </div>
@@ -123,7 +123,7 @@ const heroImage = computed(() => {
         <!-- Section Header -->
         <div class="text-center max-w-3xl mx-auto mb-16">
           <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
-            Aktivitas Kami
+            Kegiatan Kami
           </h2>
           <p class="text-lg md:text-xl text-slate-600 leading-relaxed">
             Berbagai kegiatan yang kami lakukan bertujuan untuk mendukung penyebaran pengetahuan bebas melalui
@@ -144,7 +144,7 @@ const heroImage = computed(() => {
             <div class="p-6">
               <h3 class="text-2xl font-bold text-slate-900 mb-3">WikiLatih</h3>
               <p class="text-slate-600 leading-relaxed">
-                WikiLatih ada sebagai program pelatihan penyuntingan dasar di Projek Wikimedia bahasa Indonesia.
+                WikiLatih ada sebagai kegiatan pelatihan penyuntingan dasar di Projek Wikimedia bahasa Indonesia.
               </p>
             </div>
           </div>
