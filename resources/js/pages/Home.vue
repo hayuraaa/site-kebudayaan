@@ -1,44 +1,8 @@
 <script setup>
 import AppLayout from './Layout/AppLayout.vue';
-import ModalBanner from './Layout/ModalBanner.vue';
-import { Link } from '@inertiajs/vue3';
-import { computed } from 'vue';
-
-const props = defineProps({
-  banners: Array,
-  sliders: Array,
-});
-
-const scrollToNextSection = () => {
-  const proyekSection = document.querySelector('#proyek-section');
-  if (proyekSection) {
-    proyekSection.scrollIntoView({ behavior: 'smooth' });
-  }
-};
-
-// Fungsi untuk mendapatkan URL gambar lengkap (sama seperti ModalBanner)
-const getImageUrl = (imagePath) => {
-  if (!imagePath) return '';
-
-  if (imagePath.startsWith('http')) {
-    return imagePath;
-  }
-
-  return `http://dashboard.wikimedia.or.id/storage/${imagePath}`;
-};
-
-// Fungsi untuk mendapatkan slider random atau default image
-const heroImage = computed(() => {
-  if (props.sliders && props.sliders.length > 0) {
-    const randomIndex = Math.floor(Math.random() * props.sliders.length);
-    return getImageUrl(props.sliders[randomIndex].gambar);
-  }
-  return '/hero_glam.png';
-});
 </script>
 
 <template>
-  <ModalBanner v-if="banners && banners.length > 0" :banners="banners" />
   <AppLayout>
     <!-- Hero Section -->
     <section class="relative min-h-[85vh] flex items-center overflow-hidden">
@@ -49,7 +13,7 @@ const heroImage = computed(() => {
           <!-- Left: Visual - 70% width -->
           <div
             class="lg:col-span-7 relative lg:h-[550px] h-[400px] rounded-3xl overflow-hidden shadow-2xl animate-fade-in order-2 lg:order-1">
-            <img :src="heroImage" alt="Kebudayaan Indonesia" class="w-full h-full object-cover" />
+            <img src="/hero_glam.png" alt="Kebudayaan Indonesia" class="w-full h-full object-cover" />
             <div class="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent" />
           </div>
 
@@ -80,7 +44,6 @@ const heroImage = computed(() => {
     <section class="py-20 lg:py-28 bg-white">
       <div class="container mx-auto px-6 lg:px-8">
         <div class="max-w-6xl mx-auto">
-          <!-- Section Title -->
           <div class="text-center mb-12">
             <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 leading-tight">
               <a href="https://wikimedia.or.id" target="_blank"
@@ -92,7 +55,6 @@ const heroImage = computed(() => {
             </h2>
           </div>
 
-          <!-- Description Paragraphs -->
           <div class="space-y-6 text-slate-600 text-base md:text-lg leading-relaxed">
             <p>
               Program Kebudayaan Wikimedia Indonesia memberikan dukungan terhadap upaya dokumentasi dan pelestarian
@@ -120,7 +82,6 @@ const heroImage = computed(() => {
     <!-- Aktivitas Section -->
     <section class="py-20 lg:py-28 bg-gradient-to-b from-white to-slate-50">
       <div class="container mx-auto px-6 lg:px-8">
-        <!-- Section Header -->
         <div class="text-center max-w-3xl mx-auto mb-16">
           <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
             Kegiatan Kami
@@ -131,7 +92,6 @@ const heroImage = computed(() => {
           </p>
         </div>
 
-        <!-- Activities Grid -->
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           <!-- WikiLatih -->
           <div
@@ -200,12 +160,11 @@ const heroImage = computed(() => {
           Bayangkan suatu dunia tempat setiap manusia bisa berbagi beragam pengetahuan secara bebas
         </blockquote>
       </div>
-    </section>  
+    </section>
 
     <!-- Proyek Section -->
     <section id="proyek-section" class="py-20 lg:py-28 bg-white">
       <div class="container mx-auto px-6 lg:px-8">
-        <!-- Section Title -->
         <div class="text-center mb-16">
           <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
             Proyek yang Digunakan
@@ -215,18 +174,15 @@ const heroImage = computed(() => {
           </p>
         </div>
 
-        <!-- Project Logos -->
         <div class="max-w-5xl mx-auto">
           <div class="relative">
-            <!-- Decorative Background -->
             <div
               class="absolute inset-0 bg-gradient-to-br from-blue-100/50 to-cyan-100/50 rounded-3xl transform rotate-2">
             </div>
 
-            <!-- Logos Container -->
             <div class="relative bg-white rounded-3xl shadow-2xl p-8 md:p-12 lg:p-16">
               <div class="grid grid-cols-5 gap-6 md:gap-8">
-                <!-- Logo 1 - Wikipedia -->
+                <!-- Wikipedia -->
                 <a href="https://id.wikipedia.org" target="_blank" rel="noopener noreferrer"
                   class="flex flex-col items-center justify-center p-4 rounded-2xl bg-slate-50 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group cursor-pointer">
                   <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center">
@@ -236,7 +192,7 @@ const heroImage = computed(() => {
                   </div>
                 </a>
 
-                <!-- Logo 2 - Wiktionary -->
+                <!-- Wiktionary -->
                 <a href="https://id.wiktionary.org" target="_blank" rel="noopener noreferrer"
                   class="flex flex-col items-center justify-center p-4 rounded-2xl bg-slate-50 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group cursor-pointer">
                   <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center">
@@ -246,7 +202,7 @@ const heroImage = computed(() => {
                   </div>
                 </a>
 
-                <!-- Logo 3 - Commons -->
+                <!-- Commons -->
                 <a href="https://commons.wikimedia.org" target="_blank" rel="noopener noreferrer"
                   class="flex flex-col items-center justify-center p-4 rounded-2xl bg-slate-50 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group cursor-pointer">
                   <div class="w-20 h-16 md:w-24 md:h-20 flex items-center justify-center">
@@ -257,7 +213,7 @@ const heroImage = computed(() => {
                   </div>
                 </a>
 
-                <!-- Logo 4 - Wikidata -->
+                <!-- Wikidata -->
                 <a href="https://www.wikidata.org" target="_blank" rel="noopener noreferrer"
                   class="flex flex-col items-center justify-center p-4 rounded-2xl bg-slate-50 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group cursor-pointer">
                   <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center">
@@ -266,7 +222,7 @@ const heroImage = computed(() => {
                   </div>
                 </a>
 
-                <!-- Logo 5 - Wikisource -->
+                <!-- Wikisource -->
                 <a href="https://id.wikisource.org" target="_blank" rel="noopener noreferrer"
                   class="flex flex-col items-center justify-center p-4 rounded-2xl bg-slate-50 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group cursor-pointer">
                   <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center">
