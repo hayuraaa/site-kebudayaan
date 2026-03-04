@@ -14,6 +14,9 @@ class PublicMitraController extends Controller
                 env('DASHBOARD_API_URL') . '/api/v1/mitra'
             );
 
+            \Log::info('Mitra status: ' . $response->status());
+            \Log::info('Mitra body: ' . $response->body());
+
             $regions = [];
 
             if ($response->successful() && $response->json('success')) {

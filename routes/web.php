@@ -8,6 +8,7 @@ use App\Http\Controllers\GlamController;
 use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\PublicMateriController;
 use App\Http\Controllers\PublicBannerController;
+use App\Http\Controllers\PublicMitraController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -20,9 +21,7 @@ Route::get('/kebijakan-ruang-ramah', function () {
     return Inertia::render('KebijakanRuangRamah');
 })->name('kebijakan-ruang-ramah');
 
-Route::get('/mitra', function () {
-    return Inertia::render('Mitra');
-})->name('mitra');
+Route::get('/mitra', [PublicMitraController::class, 'index'])->name('mitra');
 
 Route::get('/kontak', function () {
     return Inertia::render('Kontak');
