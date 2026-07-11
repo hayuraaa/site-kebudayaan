@@ -13,7 +13,7 @@ class ContactFormController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'nullable|email|max:255',
             'phone' => 'required|string|max:20',
-            'subject' => 'nullable|string|max:255',
+            'subject' => 'required|string|max:255',
             'message' => 'required|string',
         ]);
 
@@ -24,6 +24,7 @@ class ContactFormController extends Controller
                     'name'    => $validated['name'],
                     'email'   => $validated['email'] ?? null,
                     'phone'   => $validated['phone'],
+                    'subject' => $validated['subject'],
                     'message' => $validated['message'],
                 ]
             );
